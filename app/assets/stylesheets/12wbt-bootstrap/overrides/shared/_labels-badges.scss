@@ -1,0 +1,12 @@
+/* Labels Override */
+// ------------------------------------------------------------------
+@each $item in label, badge {
+  .#{$item} {
+    @extend %#{$item};
+  }
+  .#{$item}-important, .#{$item}-important[href]  { @extend %#{$item}-important; }
+  .#{$item}-warning, .#{$item}-warning[href]      { @extend %#{$item}-warning; }
+  .#{$item}-success, .#{$item}-success[href]      { @extend %#{$item}-success; }
+  .#{$item}-info, .#{$item}-info[href]            { @extend %#{$item}-info; }
+  .#{$item}-inverse, .#{$item}-inverse[href]      { @extend %#{$item}-inverse; }
+}

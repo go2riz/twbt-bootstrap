@@ -1,0 +1,28 @@
+/* Button Override - adjust for mobile */
+// ------------------------------------------------------------------
+.btn {
+  &:hover, &:active {
+    color: $blue;
+    background-position: 0;
+  }
+}
+
+/* Button Colour Override - adjust for mobile */
+// ------------------------------------------------------------------
+.btn-primary, .btn-warning, .btn-danger, .btn-success, .btn-info, .btn-inverse {
+  &:hover, &:active {
+    color: $white;
+  }
+}
+
+/* Button Link Override - adjust for mobile */
+// ------------------------------------------------------------------
+.btn-link {
+  &:hover {
+    color: $linkColor;
+  }
+
+  &:active {
+    color: $linkColorHover;
+  }
+}

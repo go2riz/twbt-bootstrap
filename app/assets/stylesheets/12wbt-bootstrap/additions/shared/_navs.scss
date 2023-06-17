@@ -1,0 +1,159 @@
+/* Nav-tabs */
+.nav-tabs {
+  & > li > form {
+    margin-bottom: 0;
+  }
+}
+
+/* Nav-tabs - colour variants */
+// --------------------------------------------------
+.nav-tabs.nav-tabs-blue {
+  & > li > a {
+    background-color: $blueLight;
+    border: 1px solid #ddd;
+    color: $blue;
+
+    &:hover {
+      background-color: darken($blueLight, 5%);
+    }
+  }
+
+  & > .active > a,
+  & > .active > a:hover {
+    background-color: $white;
+    border-bottom-color: transparent;
+    color: $grayDark;
+  }
+}
+
+/* Nav-tabs - large */
+.nav-tabs.nav-tabs-large {
+  & > li > a {
+    padding: 13px 15px;
+    margin-right: 5px;
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      position: relative;
+      top: -1px;
+      margin-right: 4px;
+
+      &:before {
+        font-size: 2em;
+        line-height: .5em;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+/* Nav-tabs - inactive state */
+// --------------------------------------------------
+.nav-tabs {
+  & > li.inactive > a {
+    background-color: $whitesmoke;
+    color: $grayLight;
+  }
+}
+
+/* Stacked Nav With Chevron */
+// --------------------------------------------------
+.nav-stacked-icon-chevron-right {
+  & > li > a,
+  &.nav-tabs > li > a {
+    @extend %insert-icon-chevron-right;
+  }
+}
+
+.nav-stacked {
+  & > li > a {
+    & > .icon-chevron-right {
+      float: right;
+      line-height: $baseLineHeight;
+    }
+  }
+}
+
+/* Stacked Nav With Glossy Button */
+// --------------------------------------------------
+.nav-stacked.nav-stacked-gloss {
+  & > li {
+    & > a {
+      @extend %btn;
+      display: block;
+      text-align: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      @include border-radius(0);
+
+      &:hover {
+        border-color: $btnBorder;
+      }
+
+      &:active {
+        border-color: $btnBorder;
+      }
+
+      & > i {
+        display: inline-block;
+      }
+    }
+
+    &:first-child > a {
+      @include border-top-radius($baseBorderRadius);
+    }
+
+    &:last-child > a {
+      @include border-bottom-radius($baseBorderRadius);
+    }
+  }
+}
+
+/* Stacked Nav With Large Glossy Button */
+// --------------------------------------------------
+.nav-stacked-gloss.nav-stacked-gloss-large {
+  & > li > a {
+    padding: {
+      top: 12px;
+      bottom: 12px;
+    }
+  }
+}
+
+/* Full Width Nav Tabs */
+// --------------------------------------------------
+.nav-tabs-full-width {
+  margin: {
+    left: -1 * $gridGutterWidth;
+    right: -1 * $gridGutterWidth;
+  }
+  padding: 0 $gridGutterWidth;
+}
+
+.nav-prev-next {
+  padding-right: 14px;
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    display: inline-block;
+    width: 33%;
+  }
+
+  a {
+    font-weight: normal;
+    cursor: pointer;
+  }
+
+  .title {
+    text-align: center;
+    color: $grayLight;
+  }
+
+  .next {
+    text-align: right;
+  }
+}

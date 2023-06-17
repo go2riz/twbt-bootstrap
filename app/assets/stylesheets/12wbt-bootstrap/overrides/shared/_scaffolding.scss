@@ -1,0 +1,29 @@
+/* Body Override */
+// ------------------------------------------------------------------
+body {
+  padding: 0;
+  word-wrap: break-word;
+}
+
+/* Button Override */
+// ------------------------------------------------------------------
+button {
+  font-weight: bold;
+}
+
+/* Links Override */
+// ------------------------------------------------------------------
+a {
+  color: $linkColor;
+  text-decoration: none;
+  font-weight: bold;
+
+  &:hover {
+    color: $linkColorHover;
+    text-decoration: none;
+  }
+
+  &:active {
+    color: $linkColorHover;
+  }
+}

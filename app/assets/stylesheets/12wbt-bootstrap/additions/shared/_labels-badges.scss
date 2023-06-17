@@ -1,0 +1,190 @@
+/* Badge / Label Colours */
+// --------------------------------------------------------
+// Additional colours for labels and badges
+.label-primary          { @extend %label-primary; }
+.badge-primary          { @extend %badge-primary; }
+
+.label-purple           { @extend %label-purple; }
+.badge-purple           { @extend %badge-purple; }
+
+.label-purple-reverse   { @extend %label-purple-reverse; }
+.badge-purple-reverse   { @extend %badge-purple-reverse; }
+
+.label-info-light       { @extend %label-info-light; }
+.badge-info-light       { @extend %badge-info-light; }
+
+.label-white            { @extend %label-white; }
+.badge-white            { @extend %badge-white; }
+
+// Additional sizes for labels and badges
+.label-small {
+  @extend %label-small;
+}
+.badge-small {
+  @extend %badge-small;
+}
+
+/* Comment badge */
+// --------------------------------------------------------
+.badge-comment {
+  $badgeCommentPaddingWidth: 5px;
+  $badgeCommentBorderWidth: 1px;
+  $badgeCommentArrowSize: 5px;
+  $badgeCommentOffsetLeft: 5px;
+  $badgeCommentHeight: $baseFontSize + $badgeCommentPaddingWidth*2;
+
+  position: relative;
+  padding: 0 $badgeCommentPaddingWidth;
+  height: $badgeCommentHeight;
+  line-height: $badgeCommentHeight;
+  text-align: center;
+  background-color: $white;
+  border: 1px solid $grayLighter;
+  font-weight: bold;
+  font-size: $smallFontSize;
+  color: $grayLight;
+  min-width: 15px;
+  @include border-radius(4px);
+  @include inline-block;
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 50%;
+    margin-left: -$badgeCommentArrowSize;
+    top: $badgeCommentHeight;
+    border: $badgeCommentArrowSize solid;
+    border-color: $grayLighter transparent transparent $grayLighter;
+    z-index: 0;
+  }
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 50%;
+    margin-left: $badgeCommentBorderWidth + -$badgeCommentArrowSize;
+    top: $badgeCommentHeight;
+    border: ($badgeCommentArrowSize - $badgeCommentBorderWidth) solid;
+    border-color: $white transparent transparent $white;
+    z-index: 1;
+  }
+}
+
+/* Video badge */
+// --------------------------------------------------------
+.badge-video {
+  display: inline-block;
+  background-color: $linkColor;
+  background-color: transparentize($linkColor, .2);
+  color: white;
+  text-transform: uppercase;
+  padding: 5px 8px;
+  line-height: $baseFontSize * 1.3;
+  border-radius: $baseBorderRadius;
+
+  @include insert-icon(icon-play, before);
+
+  &:before {
+    font-size: $baseFontSize * 1.3;
+  }
+
+  &.small {
+    padding: 2px 4px;
+    border-radius: $baseBorderRadius * .5;
+    font-size: $baseFontSize * .65;
+    line-height: $baseFontSize * .65;
+
+    &:before {
+      font-size: $baseFontSize * .65;
+    }
+  }
+}
+
+/* Avatar badge */
+// --------------------------------------------------------
+.badge-avatar {
+  @extend %badge;
+  @include border-radius(0);
+  font: {
+    style: normal;
+    size: $smallFontSize * .8;
+    line-height: $smallLineHeight * .8;
+  }
+  text-transform: uppercase;
+  color: $white;
+  background: $linkColor;
+  background: transparentize($linkColor, .2);
+  padding: 2px;
+  text-align: center;
+}
+
+/* Calendar badge */
+// --------------------------------------------------------
+.badge-calendar {
+  @extend %label;
+  padding: 4px 6px 6px;
+  text-align: center;
+  font-weight: bold;
+  background-color: $white;
+  color: $linkColor;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,.2);
+  box-shadow: 0 1px 3px rgba(0,0,0,.1);
+
+  .day, .month, .year {
+    display: block;
+  }
+
+  .day {
+    font-size: 2em;
+    line-height: .9em;
+  }
+
+  .month {
+    text-transform: uppercase;
+  }
+
+  .month, .year {
+    font-size: $smallFontSize;
+    line-height: $smallFontSize + 2;
+  }
+}
+
+/* Accelerator label */
+// --------------------------------------------------------
+.label-accelerator {
+  text-shadow: none;
+  @extend %label-primary;
+}
+
+/* Label sticky bottom */
+// --------------------------------------------------------
+.label-sticky-bottom {
+  position: fixed;
+  bottom: 0;
+  right: $gridGutterWidth;
+  padding: 6px 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+  @include border-bottom-radius(0);
+}
+.label-clickable {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+/* Reversed Important Label */
+// --------------------------------------------------------
+.label-important-inverse {
+  background: $white;
+  border: solid 1px $red;
+  color: $red;
+
+  i {
+    color: $red;
+  }
+}

@@ -1,0 +1,134 @@
+/* Nutrition table */
+// ------------------------------------------------------------------
+.nutritional-information {
+  clear: both;
+
+  .nav-tabs {
+    margin-bottom: 0;
+    border-bottom: 0;
+
+    a {
+      color: $grayDark;
+      border-color: $grayLighter;
+      @include background(linear-gradient($white, $grayLighter));
+    }
+
+    a, a:hover {
+      border-bottom-color: $blueLightSaturated;
+    }
+
+    a:hover,
+    .active a {
+      background: $white;
+    }
+
+    .active a {
+      border-color: $blueLightSaturated;
+      border-bottom-color: transparent;
+    }
+  }
+
+  .change-grams {
+    line-height: 30px;
+    button {
+      float: right;
+    }
+  }
+
+  .extract {
+    display: none;
+  }
+
+  h2 {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  table {
+    color: $textColor;
+    border: solid 1px $blueLightSaturated;
+
+    tr {
+      td {
+        border-color: $blueLightSaturated;
+        background: $white;
+
+        &:last-child {
+          text-align: right;
+          font-weight: bold;
+        }
+      }
+
+      &:first-child {
+        td {
+          font: {
+            weight: bold;
+            size: 140%;
+          }
+        }
+      }
+    }
+
+    tr.serves,
+    tr.nutrient,
+    tr.actions {
+      h4 {
+        margin: 5px 0;
+
+        a {
+          color: $gray;
+        }
+      }
+
+      td {
+        font-weight: normal;
+      }
+    }
+
+    tr.nutrient,
+    tr.actions {
+      td {
+        border-top-style: dashed;
+        text-align: left;
+      }
+    }
+
+    tr.nutrient {
+      h1, h2, h3, h4, h5, h6 {
+        font-size: $baseFontSize;
+        margin: 0;
+        a {
+          text-decoration: none;
+          display: block;
+        }
+      }
+
+      i {
+        @include inline-block;
+        color: $blue;
+        font-size: 180%;
+        line-height: 0.5em;
+        width: 25px;
+        text-align: center;
+        margin-right: 4px;
+      }
+
+      span {
+        margin-right: 4px;
+        & > i {
+          margin-right: 0;
+        }
+      }
+
+      button {
+        float: right;
+      }
+
+      .details {
+        p:first-of-type {
+          margin-top: $baseLineHeight / 2;
+        }
+      }
+    }
+  }
+}

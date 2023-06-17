@@ -1,0 +1,41 @@
+/* Pager */
+// --------------------------------------------------
+.pager {
+  .page-num {
+    line-height: 34px;
+  }
+
+  /* Hide previous/next text if it's wrapped inside a span */
+  &.pager-simple {
+    .previous, .next {
+      & > a {
+        & > span {
+          display: none;
+        }
+
+        &:before, &:after {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  /* Include chevron-left and chevron-right icons in the previous/next button */
+  .previous {
+    & > a {
+      @include insert-icon(icon-chevron-left);
+      &:before {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .next {
+    & > a {
+      @include insert-icon(icon-chevron-right, after);
+      &:after {
+        margin-left: 5px;
+      }
+    }
+  }
+}

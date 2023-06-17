@@ -1,0 +1,23 @@
+/* Label / Badge (Hover / Active States) - Mobile Adjustment */
+// ------------------------------------------------------------------
+@each $item in label, badge {
+  a%#{$item}-important:active    { background-color: darken($errorText, 10%); }
+  a%#{$item}-warning:active      { background-color: darken($orange, 10%); }
+  a%#{$item}-success:active      { background-color: darken($successText, 10%); }
+  a%#{$item}-info:active         { background-color: darken($infoText, 10%); }
+  a%#{$item}-inverse:active      { background-color: darken($grayDark, 10%); }
+  a%#{$item}-primary:active      { background-color: darken($btnPrimaryBackgroundHighlight, 10%); }
+  a%#{$item}-purple:active       { background-color: darken($purple, 10%); }
+  a%#{$item}-info-light:active   { background-color: darken($blueLightSaturated, 10%); }
+  a%#{$item}-white:active        { background-color: darken($white, 10%); }
+}
+
+/* Label / Badge (Hover / Active States) - Mobile Adjustment */
+// ------------------------------------------------------------------
+a%label,
+a%badge {
+  &:hover, &:active {
+    color: white;
+    @include opacity(100);
+  }
+}

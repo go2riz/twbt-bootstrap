@@ -1,0 +1,27 @@
+/* Dropdown menu - Disabled State */
+// --------------------------------------------------------
+.dropdown-menu {
+  .disabled {
+    color: $greyLighter;
+
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+/* Dropdown menu - Align Right */
+// --------------------------------------------------------
+.dropdown-menu-align-right {
+  left: auto;
+  right: 0;
+}
+
+// Tip box icon - Adjustments
+.dropdown-toggle {
+  & + [class^="icon-"],
+  & + [class*=" icon-"] {
+    margin: 0 5px;
+    vertical-align: middle;
+  }
+}

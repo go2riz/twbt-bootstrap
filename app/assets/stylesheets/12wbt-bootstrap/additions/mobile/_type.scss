@@ -1,0 +1,32 @@
+/* Heading Override - Responsive Adjustment */
+// ------------------------------------------------------------------
+@include respond-to(phone) {
+  h1 {
+    font-size: $baseFontSize * (5 / 3);
+    line-height: $baseLineHeight * (5 / 3);
+    margin: $baseLineHeight 0;
+  }
+
+  h2 {
+    font-size: $baseFontSize * 1.2;
+    line-height: $baseLineHeight * 1.2;
+    small {
+      font-size: $baseFontSize * 1;
+    }
+  }
+
+  h3, h4, h5, h6 {
+    font-size: $baseFontSize * 1;
+    line-height: $baseLineHeight * 1;
+  }
+
+  .page-header h1 {
+    line-height: $baseLineHeight * (4 / 3);
+    margin-bottom: $gridGutterWidth;
+
+    small {
+      font-size: $baseFontSize * 1.2;
+      line-height: $baseLineHeight * 1.2;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+/* Progress Bars and Spinners */
+// --------------------------------------------------
+.progress {
+  &.spinner {
+    clear: both;
+  }
+
+  .bar {
+    width: 100%;
+  }
+}

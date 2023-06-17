@@ -1,0 +1,19 @@
+// -------------------------------------------------------------
+// Bootstrap utilities - to be extended in the main app
+// -------------------------------------------------------------
+
+/* Mixins */
+@import 'bourbon';
+@import 'bootstrap/mixins';
+@import '12wbt-bootstrap/mixins';
+
+/* Variables */
+@import 'bootstrap/variables';
+@import '12wbt-bootstrap/overrides/shared/variables';
+@import '12wbt-bootstrap/overrides/desktop/variables';
+
+/* Fonts */
+@import '12wbt-bootstrap/overrides/shared/fonts';
+
+/* Placeholder selectors */
+@import '12wbt-bootstrap/selectors/desktop';

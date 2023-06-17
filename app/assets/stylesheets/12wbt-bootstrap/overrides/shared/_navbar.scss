@@ -1,0 +1,134 @@
+/* Navbar Override */
+// ------------------------------------------------------------------
+.navbar {
+  font: {
+    family: $museo;
+    weight: 500;
+  }
+
+  margin: {
+    left: -1 * $gridGutterWidth;
+    right: -1 * $gridGutterWidth;
+    bottom: $gridGutterWidth;
+  }
+
+  // Navbar Inner Wrapper
+  .navbar-inner {
+    border: 0;
+  }
+
+  // Navbar Toggle
+  .btn-navbar {
+    padding: {
+      top: 9px;
+      bottom: 9px;
+    }
+  }
+
+  // Navbar Button
+  .btn {
+    @extend .btn-info;
+    border: 1px solid $blackTranslucent;
+    [class^="icon-"],
+    [class*=" icon-"] {
+      margin: {
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+
+  .btn,
+  .btn-group {
+    @include navbarVerticalAlign(32px); // Vertically center in navbar
+  }
+
+  // Brand Logo
+  .brand {
+    font: {
+      family: $museo;
+      weight: bold !important;
+    }
+    text-transform: uppercase;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  // Dividers
+  .divider-vertical {
+    border-left: 1px solid darken($navbarBackgroundHighlight, 5%);
+    border-right: 1px solid lighten($navbarBackgroundHighlight, 5%);
+  }
+
+  // Links
+  .nav > li > a {
+    text-shadow: 0 1px 0 $blackTranslucent;
+  }
+
+  // Hover
+  .nav > li > a:focus,
+  .nav > li > a:hover {
+    box-shadow: inset 0 0 6px $blackTranslucent;
+  }
+
+  // Active nav items
+  .nav > .active > a,
+  .nav > .active > a:hover,
+  .nav > .active > a:focus {
+    text-shadow: none;
+    box-shadow: none;
+  }
+
+  // Navbar Dropdown
+  .nav li.dropdown.open > .dropdown-toggle,
+  .nav li.dropdown.active > .dropdown-toggle,
+  .nav li.dropdown.open.active > .dropdown-toggle {
+    text-shadow: none;
+  }
+}
+
+// Inverted navbar
+// -------------------------
+.navbar-inverse {
+  .brand,
+  .nav > li > a {
+    /* text-shadow: 0 -1px 0 $whiteTranslucent; */
+  }
+
+  .nav .active > a,
+  .nav .active > a:hover,
+  .nav .active > a:focus {
+    /* text-shadow: 0 1px 0 darken($navbarInverseLinkBackgroundActive, 10%); */
+  }
+
+  // Dividers in navbar
+  .divider-vertical {
+    border-left-color: darken($navbarInverseBackground, 15%);
+    border-right-color: lighten($navbarInverseBackground, 15%);
+  }
+
+  // Navbar Button
+  .btn {
+    @extend .btn-inverse;
+  }
+}
+
+/* Navbar Forms Override */
+// ------------------------------------------------------------------
+.navbar-form {
+  @include clearfix();
+  input,
+  select,
+  .radio,
+  .checkbox {
+    @include navbarVerticalAlign(32px); // Vertically center in navbar
+  }
+}
+
+/* Navbar search */
+// ------------------------------------------------------------------
+.navbar-search {
+  @include navbarVerticalAlign(32px); // Vertically center in navbar
+}

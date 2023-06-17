@@ -1,0 +1,15 @@
+/* Breadcrumb Mobile Adjustment */
+// ------------------------------------------------------------------
+.breadcrumb {
+  a {
+    &:hover {
+      &, span {
+        color: $gray;
+      }
+    }
+
+    &:active {
+      color: $grayLight;
+    }
+  }
+}

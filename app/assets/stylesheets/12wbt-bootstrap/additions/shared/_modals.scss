@@ -1,0 +1,50 @@
+/* Modal Box - Image */
+// --------------------------------------------------
+.modal-body-image {
+  text-align: center;
+}
+
+/* Modal Box - Page Header */
+// --------------------------------------------------
+.modal-body {
+  .page-header {
+    h1 {
+      margin-top: 0;
+    }
+  }
+}
+
+/* Modal Box - Full screen mode */
+// --------------------------------------------------
+.modal-fullscreen {
+  .modal-header {
+    background: $navbarBackground;
+    color: $navbarText;
+
+    .close {
+      color: $navbarText;
+      opacity: .4;
+
+      &:hover {
+        opacity: .6;
+      }
+    }
+  }
+
+  .modal-body {
+    max-height: none;
+    padding-bottom: 60px;
+  }
+
+  .modal-footer {
+    @extend %fieldset-actions;
+    @extend %fieldset-actions-sticky-bottom;
+  }
+}
+
+/* Modal Box - Sticky footer */
+// --------------------------------------------------
+.modal-footer-sticky {
+  @extend %fieldset-actions;
+  @extend %fieldset-actions-sticky-bottom;
+}

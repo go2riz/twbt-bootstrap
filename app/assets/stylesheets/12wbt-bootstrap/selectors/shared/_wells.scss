@@ -1,0 +1,89 @@
+/* Well */
+// ------------------------------------------------------------------
+%well {
+  min-height: 20px;
+  border: 1px solid $grayLighter;
+  padding: $wellPadding;
+  background-color: $wellBackground;
+  margin-bottom: $gridGutterWidth;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+  @include clearfix();
+  @include border-radius($baseBorderRadius);
+
+  h1, h2, h3, h4, h5, h6 {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    margin: {
+      top: .5em;
+      bottom: .5em;
+    }
+  }
+
+  blockquote {
+    border-color: #ddd;
+    border-color: rgba(0,0,0,.15);
+  }
+
+  p {
+    margin-bottom: $baseLineHeight / 2;
+  }
+}
+
+/* Well - Full-width */
+// ------------------------------------------------------------------
+%well-full-width {
+  margin: 0 (-1 * $gridGutterWidth);
+  padding: 0 $gridGutterWidth;
+  @include border-radius(0);
+  @include clearfix;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5em;
+  }
+
+  &.image {
+    background: whitesmoke;
+    text-align: center;
+    img {
+      max-width: 100%;
+      display: inline-block;
+    }
+  }
+
+  @include respond-to(tablet) {
+    @include border-radius($baseBorderRadius);
+    margin: {
+      left: 0;
+      right: 0;
+    }
+    padding: {
+      left: $gridGutterWidth;
+      right: $gridGutterWidth;
+    }
+  }
+}
+
+/* Well List */
+// ------------------------------------------------------------------
+%well-inner-list {
+  margin-left: 0;
+
+  li {
+    list-style: none;
+    display: block;
+    padding: $smallWellPadding;
+    border-bottom: 1px solid $grayLighter;
+    position: relative;
+    @include clearfix();
+
+    .meta, .content {
+      word-wrap: break-word;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}

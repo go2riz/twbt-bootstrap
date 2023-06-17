@@ -1,0 +1,24 @@
+// Retina media query
+@mixin retina {
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min--moz-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 240dpi) {
+    @content;
+  }
+}
+
+// Set retina background image
+@mixin retina-background-image($image, $image-type, $image-width, $image-height, $x:0, $y:0) {
+  background: {
+    image: image-url("#{$image}.#{$image-type}");
+    repeat: no-repeat;
+    position: $x $y;
+  }
+  @include retina {
+    background-image: image-url("#{$image}@2x.#{$image-type}");
+    -moz-background-size: $image-width $image-height;
+    -o-background-size: $image-width $image-height;
+    -webkit-background-size: $image-width $image-height;
+    background-size: $image-width $image-height;
+  }
+}

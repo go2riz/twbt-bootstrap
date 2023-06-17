@@ -1,0 +1,15 @@
+/* Well Override */
+// ------------------------------------------------------------------
+.well {
+  @extend %well;
+}
+
+/* Well Size Override */
+// ------------------------------------------------------------------
+.well-small {
+  padding: $smallWellPadding;
+}
+
+.well-large {
+  padding: $largeWellPadding;
+}

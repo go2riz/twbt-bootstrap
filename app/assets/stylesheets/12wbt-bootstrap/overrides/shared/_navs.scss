@@ -1,0 +1,39 @@
+/* Nav Override */
+// ------------------------------------------------------------------
+.nav > li > a {
+  &:hover {
+    background-color: $blueLight;
+  }
+  &.btn:hover {
+    background-color: $btnBackgroundHighlight;
+  }
+}
+
+/* Nav List Override */
+// ------------------------------------------------------------------
+.nav-list .nav-header {
+  background: whitesmoke;
+}
+
+/* Nav Tabs Override */
+// ------------------------------------------------------------------
+.nav-tabs > li > a {
+  padding-right: $smallWellPadding;
+  padding-left: $smallWellPadding;
+}
+
+/* Nav Dropdown Override */
+// ------------------------------------------------------------------
+.nav-tabs .open .dropdown-toggle,
+.nav-pills .open .dropdown-toggle,
+.nav > li.dropdown.open.active > a:hover {
+  color: $blue;
+  background-color: $blueLightSaturated;
+  border-color: darken($blueLightSaturated, 10%);
+}
+.nav li.dropdown.open .caret,
+.nav li.dropdown.open.active .caret,
+.nav li.dropdown.open a:hover .caret {
+  border-top-color: $blue;
+  border-bottom-color: $blue;
+}

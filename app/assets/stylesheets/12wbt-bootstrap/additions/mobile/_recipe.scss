@@ -1,0 +1,17 @@
+.recipe-card-wrapper {
+  &.recipe-card-swapping {
+    &:hover {
+      .recipe-card {
+        background-color: white !important;
+      }
+
+      .recipe-card {
+        @include opacity(100);
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

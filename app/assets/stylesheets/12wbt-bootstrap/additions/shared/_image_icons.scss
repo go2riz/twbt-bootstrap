@@ -1,0 +1,106 @@
+// Generic image icon
+// ------------------------------------------------------------------
+[class^='image-icon'],
+[class*=' image-icon'] {
+  @include inline-block;
+  vertical-align: middle;
+  text-indent: -9999px;
+}
+
+// Pre-season icons
+// ------------------------------------------------------------------
+$preseason-tasks: get-real,
+                  set-your-goals,
+                  gear-up,
+                  say-it-out-loud,
+                  kitchen-makeover,
+                  organise-and-diarise,
+                  fitness-test,
+                  measure-up;
+
+@for $i from 1 through length($preseason-tasks) {
+  $task: nth($preseason-tasks, $i);
+  $pos-y: ($i - 1) * -50px;
+
+  .image-icon-#{$task} {
+    @include retina-background-image('pre-season/icons-pre-season', 'png', 100px, 383px, 0, $pos-y);
+    width: 40px;
+    height: 30px;
+  }
+
+  .unavailable {
+    .image-icon-#{$task} {
+      background-position: -50 $pos-y;
+    }
+  }
+}
+
+.image-icon-fitness-test {
+  height: 35px;
+  margin-top: -5px;
+}
+
+// ------------------------------------------------------------------
+// Done icon
+.image-icon-done {
+  @include retina-background-image('pre-season/icon-done', 'png', 21px, 21px, 0, 0);
+  width: 21px;
+  height: 21px;
+  background-position: 50% 50%;
+}
+
+// ------------------------------------------------------------------
+// Tick Icon
+.image-icon-radio-unchecked,
+.image-icon-radio-checked {
+  @include inline-block;
+  @include retina-background-image('icons/radio-check', 'png', 44px, 22px, 0, 0);
+  width: 22px;
+  height: 22px;
+}
+
+.image-icon-radio-unchecked {
+  border-radius: 11px;
+  background-color: white;
+  background-position: -22px 0;
+}
+
+.image-icon-radio-checked {
+  background-position: 0 0;
+}
+
+// ------------------------------------------------------------------
+// Add to home icon
+.image-icon-add-to-home {
+  display: inline-block;
+  width: 18px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAPCAQAAABDj1eZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAUdJREFUKFNtkLtLw1AYxS/qJLhXVKr2ZRulUNtiqgSb3CziICI6ucTFVYcOnaQOFRwUnNTRwUWXgpP/QdHNUEQUHGxofYBTlRs83iZNjKTncOGe7/vx3QchXUWn6FL3jhfKUdCCr5zuifV5oDiHQM+c+CIhiiCSWNu08iq9oHXKLAiqrgR4UXqlOEYZt++ExEL0wW7+OW0G10muLv9gmqfe5FAWKmTMYQYiFL7PYwyLOD8lSjNh2gdnPzMII4QUBxc4OothbAF7GCBKQ0YbSWyPQsIhqvetS+y0ygGMo/KFZfviDvR4AhwgZU9dGYnA0J/6ndc15i3ouYIMcVVUcEXIoOxCeRCfwP8sXBSdjtpUv/1QW+K16kCCIUC4id9Fa0JtkluwVkSfqPL6RwfSDA0aNlx7k/bWgViB7bMS2/1vk5sdsZLN/ALSuL3tylO4RAAAAABJRU5ErkJggg==);
+  background-size: 18px 15px;
+  text-indent: -9999em;
+  overflow: hidden;
+}
+
+@include retina {
+  .image-icon-add-to-home {
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAeCAQAAADu6HTYAAADPElEQVR4Xq3TX2gcRRzA8e/M7mVv2+TSNpc/TZtrY6jUGqgaSAmEChKLrYK0YH0RFC2CSCkEfCghiKU04J8qNigq6os+iQV98MHWFwVBrQQRWs21lBw5cw3NNb1/udu72RGG5Y77IzXW77D7sAwf5scyYoL6BGXSDKFZwaGpLvIUaeoCkvX1MmsM0Ny6oRSQYOLuIS+YZOpfQdqslpUxcZrzTVAz4qPwW2O3CeIwC/RSzeY6Ow1QhUrkr+YOWfEKDkEP8Rij7CHKJmrFSDHBdwGEE5wiGChPN+PnT8VdRtEIl1d4gRj/1EVe5ZSBKGh8iqQpo/Fo5+3C/gz0MYg4zgwbqday1/Q4B8BGQ45d/Hi54lakCrU5obOcidJpu1+Lg9whjabyaOYLnrIBFFaRD+xe2ybMDWY66GmP/WA9cGfGp0CWhy0wkMN8inepFiH2rV1j0NQSNQbFLRQnS8/8YSDBBpadfv4CYDub2fmeHDNAsL1MBWUel0iA+Xik6eHcyvD3vAMSU1TGuA/YRS+dD7ovCQN43GKRFCU20Kd3V/avDVVyAZ5niTEuLA5/zBGWg9EEEhfJKN200Tat8CmRAQb9+wv7soPlHt2tQorsz1uPbr0HTY4sJwrH47zJZwABBAKLMBoQXepwgTwdHCo+fXMkQ4lrxEmQ5AaXipPqDY9V2vn09tgvTPI71EEGYxM+/uMJLJ4svpgaWGKOi/xKgmqLSUGSUd5f2vIVJ/CgBaTIUsZ7ZBsn0+NzfMOXLFCXQyTcybN6ep5ZZgUOHn7jpfUpsZshdugPGf+E5zjbyHTSRyQ8xfRPPM/s63RHeuknSoT22mjmmnAOIMkUZ6D1xSfPPAfd1WFKM3sO2CMaHx8M1NjnXKHaAGGkOW0C02WeYHUz4qMtx+w5gUDS8NckYe5lHsMYwCZEPyEEmjLDZFmAS7CDviMdxyTkMNVBKEmYLvbiQQBIBBbCQG04bGQvFWz6CfsCQLWCigILFwcfkGYBiOpbYuOizTAyYyDdCtrGaRG1LCkIgMYEFhI0WqQZoSlbGRyHKe4qOx7iv2bVQW9dp4dlM/x6kmwnWQcd/Q3FCqwTEiT5s+6D5v/pb0SSHyg7uhMWAAAAAElFTkSuQmCC);
+  }
+}
+
+// ------------------------------------------------------------------
+// Icon size
+.image-icon-done-large,
+.image-icon-todo-large {
+  @include retina-background-image('pre-season/icon-done-large', 'png', 80px, 40px, 0, 0);
+  width: 40px;
+  height: 40px;
+}
+
+.image-icon-done-large {
+  background-position: 0 0;
+}
+
+.image-icon-todo-large {
+  background-position: -40px 0;
+}

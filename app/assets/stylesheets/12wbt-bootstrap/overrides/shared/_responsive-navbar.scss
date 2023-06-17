@@ -1,0 +1,32 @@
+/* Responsive Nav Bar Override */
+// ------------------------------------------------------------------
+@media (max-width: $navbarCollapseWidth) {
+  .nav-collapse .nav .nav-header {
+    background: darken($navbarBackground, 3%);
+  }
+
+  .nav-collapse .navbar-form,
+  .nav-collapse .navbar-search {
+    border: {
+      top: 1px solid transparentize(black, .8);
+      bottom: 1px solid transparentize(black, .8);
+    }
+  }
+
+  .nav-collapse .nav > li > a:hover,
+  .nav-collapse .dropdown-menu a:hover {
+    box-shadow: none;
+  }
+
+  // Inverse Nav Bar
+  .navbar-inverse {
+    .nav-collapse .nav .nav-header {
+      background: darken($navbarInverseBackground, 3%);
+    }
+  }
+
+  .navbar-inverse .nav-collapse .nav > li > a:hover,
+  .navbar-inverse .nav-collapse .dropdown-menu a:hover {
+    background-color: $navbarInverseLinkBackgroundHover;
+  }
+}

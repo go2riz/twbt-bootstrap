@@ -1,0 +1,113 @@
+/* Avatar image */
+// ------------------------------------------------------------------
+.img-avatar {
+  $imgAvatarWidth: 50px;
+  $imgAvatarHeight: 50px;
+  $imgAvatarPadding: 4px;
+
+  @extend .img-polaroid;
+  display: inline-block;
+  position: relative;
+  width: $imgAvatarWidth;
+  height: $imgAvatarHeight;
+  padding: $imgAvatarPadding;
+
+  span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-position: 50% 50%;
+    background-size: 50px auto;
+    background-repeat: no-repeat;
+
+    &.lazyload {
+      background-size: 14px 14px;
+    }
+  }
+
+  .badge-avatar {
+    display: block;
+    position: absolute;
+    bottom: $imgAvatarPadding;
+    left: $imgAvatarPadding;
+    width: $imgAvatarWidth;
+    padding: {
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+/* Member-box (comment/reply) */
+// ------------------------------------------------------------------
+.member-box {
+  margin-bottom: 15px;
+  border: 1px solid $inputBorder;
+  border-radius: 4px;
+
+  &.highlighted {
+    box-shadow: 0px 0px 5px $grayLight;
+
+    .member-title {
+      background-color: #FCF0A4 !important;
+      border-bottom: 4px solid $blue;
+    }
+  }
+
+  .member-title {
+    @include clearfix;
+    padding: 10px;
+    background-color: $blueLight;
+    border-bottom: 1px solid $inputBorder;
+    border-radius: 4px 4px 0 0;
+
+    .img-avatar {
+      float: left;
+    }
+
+    .member-name {
+      display: block;
+      margin-left: 60px + $smallWellPadding;
+      margin-top: -2px;
+      line-height: $smallLineHeight;
+    }
+
+    .member-meta {
+      margin-left: 60px + $smallWellPadding;
+      color: $grayDark;
+      font-size: $smallFontSize;
+      line-height: $smallLineHeight;
+
+      .badge {
+        margin: 2px 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .member-content {
+    padding: 7px 10px;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    a.continue-reading {
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:before {
+        right: 0;
+      }
+    }
+  }
+
+  a.continue-reading {
+    display: block;
+    @extend %insert-icon-chevron-right;
+  }
+}

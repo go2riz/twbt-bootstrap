@@ -1,0 +1,246 @@
+/* Button Colour */
+// --------------------------------------------------
+.btn-neutral {
+  @include buttonBackground($btnNeutralBackground, $btnNeutralBackgroundHighlight, $textColor, $textShadow);
+}
+
+/* Show more button (for expanding content) */
+// --------------------------------------------------------
+.btn-show-more {
+  font-weight: bold;
+  @extend %insert-icon-chevron-down;
+}
+.btn-show-less {
+  font-weight: bold;
+  @extend %insert-icon-chevron-up;
+}
+.btn-browse-more {
+  font-weight: bold;
+  @extend %insert-icon-chevron-right;
+}
+.btn-icon-chevron-right {
+  @extend %insert-icon-chevron-right;
+}
+
+.btn-print {
+  @extend .pull-right;
+  padding: 0.2em 0;
+  font-family: $museo;
+  font-weight: normal;
+}
+
+/* Button with divider */
+// --------------------------------------------------------
+.btn-block-divider {
+  display: block;
+  padding: {
+    top: .5em;
+    bottom: .5em;
+  }
+  border: 0;
+  border-top: 1px solid $grayLighter;
+  margin-top: $gridGutterWidth;
+  text-align: left;
+  box-sizing: content-box;
+}
+
+/* Search button inside a search form */
+// --------------------------------------------------------
+.btn-form-search-group {
+  position: relative;
+  margin-bottom: $gridGutterWidth;
+
+  .form-search {
+    position: absolute;
+    top: 0;
+    right: 0;
+ 
+    .input-append {
+      text-align: right;
+ 
+      input {
+        width: 45%;
+      }
+    }
+  }
+}
+
+/* Button with Badge */
+// --------------------------------------------------------
+.btn {
+  &.btn-with-badge {
+    &.input-block-level {
+      position: relative;
+
+      .badge {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        margin-top: -10px;
+      }
+    }
+
+    .badge {
+      @extend .badge-white;
+    }
+  }
+}
+
+/* Inline button */
+// --------------------------------------------------------
+.btn-inline {
+  @extend %btn-inline;
+}
+
+.small, small {
+  &.btn-inline, .btn-inline {
+    @extend %small;
+  }
+}
+
+/* Add comment link */
+// --------------------------------------------------------
+.btn-inline-comment {
+  @include insert-icon(icon-comment);
+}
+
+/* Dropdown toggle button */
+// --------------------------------------------------------
+.dropdown-toggle {
+  &.btn-block {
+    text-align: left;
+    position: relative;
+    padding-right: 24px;
+
+    .caret {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      margin-top: -2px;
+    }
+  }
+
+  &.btn-small {
+    padding-right: 20px;
+
+    .caret {
+      right: 8px;
+    }
+  }
+
+  &.btn-mini {
+    padding-right: 18px;
+
+    .caret {
+      right: 5px;
+    }
+  }
+}
+
+/* Button block */
+// --------------------------------------------------------
+.btn-actions,
+div.btn-block,
+nav.btn-block {
+  margin: {
+    top: 0;
+    bottom: $gridGutterWidth;
+  }
+}
+
+.btn-actions {
+  & > nav.btn-block:last-of-type,
+  & > div.btn-block:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.btn-actions-two-columns {
+  .btn-group {
+    display: block;
+    margin-right: 145px;
+
+    & > .btn {
+      width: 100%;
+      text-align: left;
+      position: relative;
+      padding-right: 24px;
+
+      .caret {
+        position: absolute;
+        float: none;
+        right: 12px;
+        top: 50%;
+        margin-top: -2px;
+      }
+    }
+  }
+
+  & > .btn {
+    width: 130px;
+    float: right;
+    @include box-sizing(border-box);
+
+    & > i {
+      margin-left: 0;
+    }
+  }
+
+  & > .btn,
+  .btn-group > .btn,
+  .btn-group > .btn > span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .btn-group > .btn > span {
+    display: block;
+  }
+}
+
+.btn-actions-sticky-bottom {
+  @extend %fieldset-actions;
+  @extend %fieldset-actions-sticky-bottom;
+}
+
+/* Button group */
+// --------------------------------------------------------
+.btn-group .dropdown-menu .btn-small {
+  @include border-radius(0);
+}
+
+.btn-group-centre-align {
+  display: block;
+  margin: $gridGutterWidth 0;
+  text-align: center;
+
+  .btn, .btn-inline {
+    float: none;
+  }
+}
+
+.btn-group-section {
+  margin-top: 1.5em;
+  margin-bottom: .5em;
+}
+
+.btn-group-bordered {
+  .btn, .btn-link {
+    float: none;
+    margin: 0.2em 12px 0.2em 0;
+    padding: 0 10px 0 0;
+    border-right: 1px solid $blueLightSaturated;
+
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+      border-right-width: 0;
+    }
+  }
+
+  button.btn,
+  button.btn-link {
+    margin-right: 5px;
+  }
+}

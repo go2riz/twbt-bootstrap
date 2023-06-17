@@ -1,0 +1,38 @@
+.mish-tips {
+  padding: $gridGutterWidth;
+  margin: {
+    top: $baseLineHeight;
+    bottom: $baseLineHeight;
+  }
+  position: relative;
+  clear: both;
+
+  & > *:first-child {
+    margin-top: 0;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
+  ul {
+    margin: 0 0 15px;
+    list-style: none;
+  }
+
+  li {
+    @include insert-icon(icon-ok);
+    margin-bottom: 10px;
+    padding-left: 25px;
+  }
+
+  li::before {
+    position: absolute;
+    left: $gridGutterWidth;
+    color: #008AD5;
+  }
+
+  em {
+    font-style: normal;
+  }
+}

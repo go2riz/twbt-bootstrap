@@ -1,0 +1,82 @@
+%recipe-card-swappable-state {
+  background-color: white !important;
+  border: {
+    color: $linkColor;
+    style: dashed;
+  }
+  &:hover {
+    background-color: $blueLight !important;
+  }
+}
+
+%recipe-card-label {
+  @extend %label;
+  background: $white;
+  background: transparentize($white, .3);
+  border-radius: $baseBorderRadius;
+  font-size: $smallFontSize;
+  font-weight: normal;
+  color: $textColor;
+}
+
+%recipe-card-label-active {
+  background: $blue;
+  background: transparentize($blue, .3);
+  color: $white;
+  text-shadow: 0 1px 0 $blackTranslucent;
+  -webkit-font-smoothing: antialiased;
+}
+
+%recipe-card-label-overlay {
+  @extend %recipe-card-label;
+  position: absolute;
+  bottom: 4%;
+  text-align: center;
+}
+
+%recipe-allowance-overlay {
+  @extend %recipe-card-label-overlay;
+  @include box-sizing(border-box);
+  margin: 0 5%;
+  width: 90%;
+  left: 0;
+  white-space: normal;
+
+  p {
+    font-size: $smallFontSize;
+    line-height: $smallLineHeight;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.recipe-card-swapped {
+  %recipe-card-label-overlay {
+    @extend %recipe-card-label-active;
+  }
+}
+
+%recipe-card-swappable-badge {
+  @extend %badge;
+  @include border-radius(20px);
+  content: 'Customise';
+  z-index: 999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 40px;
+  margin: {
+    top: -20px;
+    left: -60px;
+  }
+  padding: 0;
+  font: {
+    size: 18px;
+    family: $museo;
+    weight: 500;
+  }
+  text-align: center;
+  line-height: 40px;
+  -webkit-font-smoothing: antialiased;
+}

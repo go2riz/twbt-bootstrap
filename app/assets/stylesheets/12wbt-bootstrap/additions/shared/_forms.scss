@@ -1,0 +1,335 @@
+/* Base form inputs */
+// ----------------------------------------------------
+form {
+  // wrapper for all form action buttons
+  .submit, .form-submit {
+    @include clearfix;
+    margin: $baseLineHeight 0;
+  }
+
+  // help text for forms
+  p.help-info, p.help-error {
+    font-size: $smallFontSize;
+    line-height: $smallLineHeight;
+    margin: 0 0 $smallFontSize;
+  }
+  p.help-info {
+    color: $grayLight;
+  }
+  p.help-error {
+    color: $errorText;
+  }
+  p.help-block {
+    margin: 0 0 $smallFontSize;
+  }
+
+  // Toggle btn-group
+  .btn-group[data-toggle] {
+    & > .btn {
+      @extend .btn-neutral;
+      &.active, &:active {
+        background-image: none;
+      }
+    }
+  }
+}
+
+/* Angular validation */
+// ----------------------------------------------------
+input.ng-dirty.ng-invalid,
+textarea.ng-dirty.ng-invalid,
+select.ng-dirty.ng-invalid {
+  @extend input:focus:invalid;
+}
+
+/* Buttons (Use primary btn style for all submit buttons) */
+// ----------------------------------------------------
+input[type=submit].btn {
+  @extend .btn-primary;
+}
+
+/* Input sizes */
+// ----------------------------------------------------
+// Block level input
+.input-block {
+  @include input-block-level;
+}
+
+// Block level input for input append
+.input-prepend-block-level,
+.input-append-block-level {
+  position: relative;
+
+  input {
+    width: 100%;
+    min-height: 32px;
+    @include box-sizing(border-box);
+    @include border-radius(3px);
+  }
+
+  .add-on {
+    position: absolute;
+    z-index: 100;
+
+    &:first-child {
+      left: 0;
+    }
+    &:last-child {
+      right: 0;
+    }
+  }
+}
+
+/* Input grouping */
+// ----------------------------------------------------
+// Input group - vertically group inputs together
+.input-group-vertical {
+  input {
+    margin: -1px 0 0;
+    z-index: 0;
+    position: relative;
+
+    &:first-of-type {
+      @include border-top-radius($inputBorderRadius * 2);
+      @include border-bottom-radius(0);
+      margin-top: 0;
+    }
+
+    &:last-of-type {
+      @include border-top-radius(0);
+      @include border-bottom-radius($inputBorderRadius * 2);
+    }
+
+    &:focus {
+      z-index: 1;
+    }
+  }
+}
+
+.control-group-large {
+  margin-bottom: $baseLineHeight;
+}
+
+/* Search form */
+// ----------------------------------------------------
+.form-search {
+  // Submit button
+  .btn[type='submit'] {
+    border-radius: 0 16px 16px 0;
+    @include insert-icon(icon-search, before);
+
+    &:before {
+      padding-right: 5px;
+      line-height: $baseLineHeight - 2;
+    }
+  }
+
+  // Search query field
+  .input-append {
+    .search-query {
+      border-radius: 16px 0 0 16px;
+    }
+  }
+
+  // Search button icon
+  .btn-icon {
+    span { display: none; }
+    &:before { 
+      padding: 0;
+      font-size: $baseFontSize + 4;
+    }
+  }
+
+  // Adjustment when it is block-level
+  &.block-level, &.form-search-block-level {
+    .input-append {
+      display: block;
+      position: relative;
+      padding-right: 50px;
+
+      .search-query {
+        width: 100%;
+        min-height: 32px;
+        @include box-sizing(border-box);
+      }
+
+      .btn[type='submit'] {
+        width: 50px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: {
+          left: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+/* Search Filter */
+// ----------------------------------------------------
+.search-filter {
+  input[type='text'] {
+    @extend .search-query;
+    @include box-sizing(border-box);
+    min-height: 32px;
+    width: 100%;
+    margin-bottom: $baseLineHeight / 2;
+  }
+
+  select {
+    width: 100%;
+    margin-bottom: $baseLineHeight / 2;
+  }
+}
+
+/* File upload */
+// ----------------------------------------------------
+.file-upload {
+  @include clearfix;
+  padding: 5px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  .file-name {
+    margin-bottom: 0;
+    padding: 5px 0 0 5px;
+    font-size: $baseFontSize * 0.8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    i {
+      margin-right: 3px;
+    }
+  }
+  .progress {
+    margin-bottom: 0;
+  }
+}
+
+/* Fieldset */
+// ----------------------------------------------------
+fieldset {
+  @extend %fieldset-feedback;
+}
+
+// Field set group
+.fieldset-group {
+  @extend %well;
+  @extend .well-small;
+  @extend .well-white;
+
+  hr {
+    border-top-color: $grayLighter;
+    border-style: dashed;
+    margin: $baseLineHeight/2 0;
+  }
+
+  .fieldset-actions {
+    @extend %fieldset-actions;
+
+    .btn-link {
+      margin-right: $gridGutterWidth;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+    &.fieldset-actions-sticky-bottom {
+      @extend %fieldset-actions-sticky-bottom;
+    }
+  }
+
+  .fieldset-intro {
+    font-size: $baseFontSize * 1.1;
+    line-height: $baseLineHeight * 1.1;
+    margin-bottom: $baseLineHeight;
+  }
+
+  // Field set headers
+  .fieldset-sub-header {
+    @extend %fieldset-sub-header;
+  }
+
+  .well-inner-list {
+    margin-top: -$smallWellPadding;
+    margin-bottom: 0;
+
+    .meta {
+      float: left;
+      margin: 0;
+      width: 35%;
+      margin-right: 5%;
+      font-size: $baseFontSize;
+    }
+
+    .content {
+      float: left;
+      width: 60%;
+      margin: 0;
+    }
+
+    .meta-full-width,
+    .content-full-width {
+      width: auto;
+      float: none;
+
+      &.pull-right {
+        float: right;
+        margin-left: $smallWellPadding;
+      }
+
+      &.pull-left {
+        float: left;
+        margin-right: $smallWellPadding;
+      }
+    }
+  }
+
+  .fieldset-row {
+    margin-bottom: $baseLineHeight;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Fieldset Group (Blue)
+// ----------------------------------------------------
+.fieldset-group-blue {
+  @extend .well-blue;
+
+  hr {
+    border-top-color: $blueLightSaturated;
+  }
+
+  %fieldset-sub-header {
+    background-color: darken($blueLight, 3%);
+    border-bottom-color: $blueLightSaturated;
+    color: $textColor;
+  }
+}
+
+// Fieldset Number
+.fieldset-number {
+// ----------------------------------------------------
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  margin-right: 4px;
+  line-height: 33px;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font: {
+    family: $museo;
+    weight: 500;
+  }
+  border: 1px solid #53b2e4;
+  border-radius: 16px;
+  box-shadow: inset 0 1px 1px transparentize(white, .5);
+  @include background(linear-gradient(#b3dcf3, #53b2e4));
+}

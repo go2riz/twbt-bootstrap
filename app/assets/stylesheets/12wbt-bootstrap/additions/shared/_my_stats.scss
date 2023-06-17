@@ -1,0 +1,77 @@
+/* Weigh-in summary (mini) */
+// ------------------------------------------------------------------
+.weigh-in-summary-mini {
+  & > table {
+    margin: 0;
+    width: 100%;
+
+    td.large, th {
+      @include box-sizing(border-box);
+      width: 50%;
+      text-align: left;
+    }
+
+    & > thead {
+      th {
+        color: $grayLight;
+        font-weight: normal;
+        font-size: $smallFontSize;
+      }
+    }
+
+    & > tbody {
+      td.large {
+        font-size: $baseFontSize * 1.5;
+      }
+
+      & > tr.spacer {
+        & > td {
+          padding: $gridGutterWidth 0;
+        }
+      }
+
+      table {
+        margin-bottom: 0;
+      }
+    }
+
+    tfoot {
+      .btn-show-more {
+        margin: {
+          left: -1 * $smallWellPadding;
+          right: -1 * $smallWellPadding;
+          bottom: -1 * $smallWellPadding;
+        }
+      }
+    }
+  }
+}
+
+/* Weigh-in summary (normal) */
+// ------------------------------------------------------------------
+.weigh-in-summary {
+  table {
+    td:last-child {
+      font-weight: bold;
+      text-align: right;
+      border-left: 0;
+    }
+  }
+
+  button.btn-link {
+    color: $textColor;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0;
+
+    i {
+      color: $blue;
+    }
+  }
+}
+
+/* MyStats Graph */
+// ------------------------------------------------------------------
+.mystats-graph {
+  @extend %unselectable;
+}

@@ -1,0 +1,25 @@
+// -------------------------------------------------------------
+// Bootstrap styles for desktop
+// -------------------------------------------------------------
+
+/* Mixins */
+@import 'bourbon';
+@import 'bootstrap/mixins';
+@import '12wbt-bootstrap/mixins';
+
+/* Core Variables*/
+@import 'bootstrap/variables';
+@import '12wbt-bootstrap/overrides/shared/variables';
+@import '12wbt-bootstrap/overrides/desktop/variables';
+
+/* Default Bootstrap (Some components are not included) */
+@import '12wbt-bootstrap/defaults/desktop';
+
+/* Placeholder selectors */
+@import '12wbt-bootstrap/selectors/desktop';
+
+/* Override Default Bootstrap Styles */
+@import '12wbt-bootstrap/overrides/desktop';
+
+/* Additional Styles */
+@import '12wbt-bootstrap/additions/desktop';

@@ -1,0 +1,73 @@
+/* Checklist with ticks */
+// ----------------------------------------------------
+ul.checklist {
+  margin-left: 0;
+
+  li {
+    list-style: none;
+
+    &:before {
+      color: $blue;
+      content: "\f00c";
+      padding-right: 10px;
+      font: {
+        family: FontAwesome;
+        weight: normal;
+        style: normal;
+      }
+    }
+  }
+}
+
+/* Checkable list */
+// --------------------------------------------------
+.checkable-list {
+  @extend .unstyled;
+
+  li {
+    border-bottom: solid 1px #EEE;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    cursor: pointer;
+
+    &:last-child {
+      border: 0;
+    }
+
+    i {
+      font-size: 1.2em;
+      line-height: 0.4em;
+    }
+  }
+}
+
+.modal-body {
+  .checkable-list {
+    margin: -15px;
+
+    li {
+      padding: {
+        left: 15px;
+        right: 15px;
+      }
+
+      &.active {
+        background-color: $blueLight;
+      }
+    }
+  }
+}
+
+/* List of tags */
+// --------------------------------------------------
+.tag-list {
+  @extend .unstyled;
+  width: 100%;
+  margin-bottom: $baseLineHeight;
+  @include clearfix;
+
+  li {
+    float: left;
+    margin: 0 4px 4px 0;
+  }
+}

@@ -1,0 +1,14 @@
+/* Table charts */
+// --------------------------------------------------
+.table-charts,
+table.charts {
+  @extend .table;
+  @extend .table-striped;
+  @extend .table-bordered;
+}
+
+.table-footnote {
+  @extend %muted;
+  display: block;
+  margin-top: -2/3 * $baseLineHeight;
+}

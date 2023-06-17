@@ -1,0 +1,7 @@
+/* Icon Mixin */
+@mixin insert-icon($icon_class_name, $position:before) {
+  &:#{$position} {
+    @extend %fontawesome-icon;
+    @extend .#{$icon_class_name}:before;
+  }
+}

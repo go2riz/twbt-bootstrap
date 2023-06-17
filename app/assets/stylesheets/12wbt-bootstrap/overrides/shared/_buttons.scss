@@ -1,0 +1,83 @@
+/* Button Override */
+// ------------------------------------------------------------------
+.btn {
+  @extend %btn;
+}
+
+.btn-large {
+  @extend %btn-large;
+}
+
+.btn-small {
+  @extend %btn-small;
+}
+
+.btn-mini {
+  @extend %btn-mini;
+}
+
+/* Button - Colour Override */
+// ------------------------------------------------------------------
+.btn-primary {
+  @include buttonBackground($btnPrimaryBackground, $btnPrimaryBackgroundHighlight);
+
+  &.active, &:active {
+    background: $btnPrimaryBackgroundHighlight;
+  }
+}
+.btn-warning {
+  @include buttonBackground($btnWarningBackground, $btnWarningBackgroundHighlight);
+
+  &.active, &:active {
+    background: $btnWarningBackgroundHighlight;
+  }
+}
+.btn-danger {
+  @include buttonBackground($btnDangerBackground, $btnDangerBackgroundHighlight);
+
+  &.active, &:active {
+    background: $btnDangerBackgroundHighlight;
+  }
+}
+.btn-success {
+  @include buttonBackground($btnSuccessBackground, $btnSuccessBackgroundHighlight);
+
+  &.active, &:active {
+    background: $btnSuccessBackgroundHighlight;
+  }
+}
+.btn-info {
+  @include buttonBackground($btnInfoBackground, $btnInfoBackgroundHighlight);
+
+  &.active, &:active {
+    background: $btnInfoBackgroundHighlight;
+  }
+}
+.btn-inverse {
+  @include buttonBackground($btnInverseBackground, $btnInverseBackgroundHighlight);
+
+  &.active, &:active {
+    background: $btnInverseBackgroundHighlight;
+  }
+}
+
+/* Button Size Override */
+// ------------------------------------------------------------------
+.btn-large {
+  padding: 9px 16px;
+  @include border-radius(6px);
+}
+
+/* Button Link Override */
+// ------------------------------------------------------------------
+.btn-link {
+  background: {
+    color: transparent;
+    image: none;
+  }
+  border-color: transparent;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

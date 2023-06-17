@@ -1,0 +1,24 @@
+.ie8 {
+  .btn {
+    border: 0;
+    outline: darken($btnBackgroundHighlight, 10%) solid 1px;
+  }
+  .btn-primary {
+    outline-color: darken($btnPrimaryBackgroundHighlight, 10%);
+  }
+  .btn-warning {
+    outline-color: darken($btnWarningBackgroundHighlight, 10%);
+  }
+  .btn-danger {
+    outline-color: darken($btnDangerBackgroundHighlight, 10%);
+  }
+  .btn-success {
+    outline-color: darken($btnSuccessBackgroundHighlight, 10%);
+  }
+  .btn-info {
+    outline-color: darken($btnInfoBackgroundHighlight, 10%);
+  }
+  .btn-inverse {
+    outline-color: darken($btnInverseBackgroundHighlight, 10%);
+  }
+}

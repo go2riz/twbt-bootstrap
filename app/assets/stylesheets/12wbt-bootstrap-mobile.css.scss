@@ -1,0 +1,25 @@
+// -------------------------------------------------------------
+// Bootstrap styles for Mobile
+// -------------------------------------------------------------
+
+/* Mixins */
+@import 'bourbon';
+@import 'bootstrap/mixins';
+@import '12wbt-bootstrap/mixins';
+
+/* Core Variables*/
+@import 'bootstrap/variables';
+@import '12wbt-bootstrap/overrides/shared/variables';
+@import '12wbt-bootstrap/overrides/mobile/variables';
+
+/* Default Bootstrap (Some components are not included) */
+@import '12wbt-bootstrap/defaults/mobile';
+
+/* Placeholder selectors */
+@import '12wbt-bootstrap/selectors/mobile';
+
+/* Override Default Bootstrap Styles */
+@import '12wbt-bootstrap/overrides/mobile';
+
+/* Additional Styles */
+@import '12wbt-bootstrap/additions/mobile';

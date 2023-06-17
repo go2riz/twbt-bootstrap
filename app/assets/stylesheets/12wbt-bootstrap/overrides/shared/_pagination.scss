@@ -1,0 +1,35 @@
+/* Pagination Override */
+// ------------------------------------------------------------------
+.pagination {
+  margin: 0 0 15px;
+
+  ul > li > a,
+  ul > li > span {
+    margin: 0 2px;
+    padding: 1px 8px;
+    border-left-width: 1px;
+    border-radius: 4px;
+  }
+
+  ul > li > a:hover {
+    background-color: $blueLight;
+  }
+
+  ul > .active > a,
+  ul > .active > a:hover,
+  ul > .active > span {
+    background-color: $blue;
+    border-color: $blue;
+    color: white;
+  }
+
+  ul > .previous,
+  ul > .next {
+    a, span {
+      padding: 1px 7px;
+      font-size: 18px;
+      font-weight: normal;
+      font-family: arial, helvetica, sans-serif;
+    }
+  }
+}

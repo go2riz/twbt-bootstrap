@@ -1,0 +1,9 @@
+/* Collapse / Expand Transition Override */
+// ------------------------------------------------------------------
+.collapse {
+  opacity: 0;
+  @include transition(opacity .5s ease);
+  &.in {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,34 @@
+/* Progress Bar Override */
+// ------------------------------------------------------------------
+
+// Danger (red)
+.progress-danger .bar, .progress .bar-danger {
+  @include gradient-vertical(lighten($red, 15%), $red);
+}
+.progress-danger.progress-striped .bar, .progress-striped .bar-danger {
+  @include gradient-striped(lighten($red, 15%));
+}
+
+// Success (green)
+.progress-success .bar, .progress .bar-success {
+  @include gradient-vertical(lighten($green, 10%), $green);
+}
+.progress-success.progress-striped .bar, .progress-striped .bar-success {
+  @include gradient-striped(lighten($green, 10%));
+}
+
+// Info (teal)
+.progress-info .bar, .progress .bar-info {
+  @include gradient-vertical(lighten($blue, 15%), $blue);
+}
+.progress-info.progress-striped .bar, .progress-striped .bar-info {
+  @include gradient-striped(lighten($blue, 15%));
+}
+
+// Warning (orange)
+.progress-warning .bar, .progress .bar-warning {
+  @include gradient-vertical(lighten($orange, 15%), $orange);
+}
+.progress-warning.progress-striped .bar, .progress-striped .bar-warning {
+  @include gradient-striped(lighten($orange, 15%));
+}

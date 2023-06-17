@@ -1,0 +1,77 @@
+/* Paragraph Override */
+// ------------------------------------------------------------------
+p {
+  margin-bottom: $baseLineHeight;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+
+  &.small {
+    font-size: $smallFontSize;
+    line-height: $smallLineHeight;
+    margin-bottom: $smallLineHeight;
+  }
+}
+
+.lead {
+  font-size: $baseFontSize * 1.6;
+  line-height: $baseLineHeight * 1.45;
+  font-family: $museo;
+  font-weight: 300;
+}
+
+/* Heading Override */
+// ------------------------------------------------------------------
+h1, h2, h3, h4, h5, h6 {
+  small {
+    font-weight: 300;
+  }
+  margin: 1em 0;
+}
+
+h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+h1 {
+  font: {
+    family: $museo;
+    weight: 300;
+  }
+  color: $purple;
+}
+
+h2 {
+  font: {
+    family: $museo;
+    weight: 500;
+  }
+}
+
+h1 { font-size: $baseFontSize * 2.5; line-height: $baseLineHeight * 2 }
+h2 { font-size: $baseFontSize * 1.5; line-height: $baseLineHeight * 1.5 }
+h3 { font-size: $baseFontSize * 1.35; line-height: $baseLineHeight * 1.35 }
+h4 { font-size: $baseFontSize * 1.2; line-height: $baseLineHeight * 1.2 }
+h5 { font-size: $baseFontSize * 1.1; line-height: $baseLineHeight * 1.1 }
+h6 { font-size: $baseFontSize * 1; line-height: $baseLineHeight }
+
+/* Page Header Override */
+// ------------------------------------------------------------------
+.page-header {
+  border-bottom: 1px solid $grayLighter;
+  h1 {
+    small {
+      display: block;
+    }
+  }
+}
+
+/* Blockquote Override */
+// ------------------------------------------------------------------
+blockquote {
+  font-family: $museo;
+  font-weight: 300;
+
+  p {
+    @include font-shorthand($baseFontSize * 1.3, 300, $baseLineHeight * 1.2);
+  }
+}

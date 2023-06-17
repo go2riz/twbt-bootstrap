@@ -1,0 +1,22 @@
+.activity-feed {
+  article {
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .well-bubble {
+      margin: 1em 0 .5em;
+    }
+
+    .summary-intro {
+      [class^='icon-'],
+      [class*=' icon-'] {
+        display: inline-block;
+        text-align: center;
+        color: $grayLight;
+        width: 20px;
+        margin-right: 5px;
+      }
+    }
+  }
+}

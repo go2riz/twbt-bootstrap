@@ -1,0 +1,83 @@
+/* Label / Badge */
+// ------------------------------------------------------------------
+%label,
+%badge {
+  display: inline-block;
+  padding: 4px 6px;
+  font-size: $baseFontSize * .846;
+  font-weight: bold;
+  line-height: 14px;
+  color: $white;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-shadow: none;
+  background-color: $infoText;
+
+  &:empty {
+    display: none;
+  }
+}
+
+a, button {
+  &%label:hover,
+  &%badge:hover {
+    @include opacity(70);
+  }
+}
+
+%label {
+  @include border-radius(3px);
+}
+
+%label-small {
+  font-size: 10px;
+  line-height: 12px;
+  padding: 2px 4px;
+}
+
+%label-large {
+  padding: 6px 8px;
+  font-size: $baseFontSize * .946;
+}
+
+%badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  @include border-radius(12px);
+}
+
+%badge-small {
+  font-size: 10px;
+  line-height: 12px;
+  padding: 2px 6px;
+  @include border-radius(9px);
+}
+
+/* Label / Badge (Hover / Active States) */
+// ------------------------------------------------------------------
+@each $item in label, badge {
+  %#{$item}-important      { background-color: $errorText; }
+  %#{$item}-warning        { background-color: $orange; }
+  %#{$item}-success        { background-color: $successText; }
+  %#{$item}-info           { background-color: $infoText; }
+  %#{$item}-inverse        { background-color: $grayDark; }
+  %#{$item}-primary        { background-color: $btnPrimaryBackgroundHighlight; }
+  %#{$item}-purple         { background-color: $purple; }
+  %#{$item}-info-light     { background-color: $blueLightSaturated; color: $grayDark; }
+  %#{$item}-white          {
+                             border: 1px solid transparentize($linkColor, .7);
+                             background-color: white;
+                             color: $linkColor;
+                             border-sizing: box-sizing;
+                           }
+  %#{$item}-purple-reverse {
+                             text-shadow: none;
+                             background: white;
+                             border: solid 1px $purple;
+                             color: $purple;
+                             font-family: $museo;
+                             font-weight: 500;
+                           }
+
+  a%#{$item}-purple-reverse:hover { color: $purple; }
+}

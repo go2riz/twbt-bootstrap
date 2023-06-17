@@ -1,0 +1,7 @@
+%unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  -webkit-user-modify: none;
+  -webkit-highlight: none;
+  @include prefixer(user-select, none, webkit moz ms o spec);
+}

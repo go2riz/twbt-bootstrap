@@ -1,0 +1,159 @@
+@include font-face(TWBT, "12wbt", normal, normal, true);
+
+/* 12WBT specific icons */
+.icon-freezable:before              { font-family: TWBT; content: "\1200"; }
+.icon-vegetarian:before             { font-family: TWBT; content: "\1201"; }
+.icon-leftover:before               { font-family: TWBT; content: "\1202"; }
+.icon-breakfast:before              { font-family: TWBT; content: "\1203"; }
+.icon-lunch:before                  { font-family: TWBT; content: "\1204"; }
+.icon-dinner:before                 { font-family: TWBT; content: "\1205"; }
+.icon-dessert:before                { font-family: TWBT; content: "\1206"; }
+.icon-snack:before                  { font-family: TWBT; content: "\1207"; }
+.icon-protein:before                { font-family: TWBT; content: "\1208"; }
+.icon-fibre:before                  { font-family: TWBT; content: "\1209"; }
+.icon-sodium:before                 { font-family: TWBT; content: "\1210"; }
+.icon-lowfat:before                 { font-family: TWBT; content: "\1211"; }
+.icon-carb:before                   { font-family: TWBT; content: "\1212"; }
+.icon-lactose:before                { font-family: TWBT; content: "\1213"; }
+.icon-cardio:before                 { font-family: TWBT; content: "\1214"; }
+.icon-toning:before                 { font-family: TWBT; content: "\1215"; }
+.icon-weights:before                { font-family: TWBT; content: "\1215"; }
+.icon-stretch:before                { font-family: TWBT; content: "\1216"; }
+.icon-flexibility:before            { font-family: TWBT; content: "\1216"; }
+.icon-core:before                   { font-family: TWBT; content: "\1226"; }
+.icon-strength:before               { font-family: TWBT; content: "\1217"; }
+.icon-super-saturday-session:before { font-family: TWBT; content: "\1218"; }
+.icon-rest-day:before               { font-family: TWBT; content: "\1219"; }
+.icon-calorie:before                { font-family: TWBT; content: "\1220"; }
+.icon-scale:before                  { font-family: TWBT; content: "\1221"; }
+.icon-alarm:before                  { font-family: TWBT; content: "\1222"; }
+.icon-timer:before                  { font-family: TWBT; content: "\1223"; }
+.icon-cooking:before                { font-family: TWBT; content: "\1224"; }
+.icon-recipe:before                 { font-family: TWBT; content: "\1225"; }
+.icon-exercise:before               { font-family: TWBT; content: "\1226"; }
+.icon-endurance:before              { font-family: TWBT; content: "\1226"; }
+.icon-mindset:before                { font-family: TWBT; content: "\1227"; }
+.icon-event:before                  { font-family: TWBT; content: "\1228"; }
+.icon-shopping:before               { font-family: TWBT; content: "\1229"; }
+.icon-stats:before                  { font-family: TWBT; content: "\1230"; }
+.icon-help:before                   { font-family: TWBT; content: "\1231"; }
+.icon-new:before                    { font-family: TWBT; content: "\1232"; }
+.icon-accelerator:before            { font-family: TWBT; content: "\1233"; }
+.icon-measure:before                { font-family: TWBT; content: "\1234"; }
+.icon-weekly-challenge:before       { font-family: TWBT; content: "\1235"; }
+.icon-sets-abbr:before              { font-family: TWBT; content: "\1236"; }
+.icon-reps-abbr:before              { font-family: TWBT; content: "\1237"; }
+.icon-weight-abbr:before            { font-family: TWBT; content: "\1238"; }
+.icon-time-abbr:before              { font-family: TWBT; content: "\1239"; }
+.icon-level-abbr:before             { font-family: TWBT; content: "\1240"; }
+.icon-distance-abbr:before          { font-family: TWBT; content: "\1241"; }
+.icon-speed-abbr:before             { font-family: TWBT; content: "\1242"; }
+.icon-mini-milestone:before         { content: "\f024"; }
+.icon-major-milestone:before        { content: "\f024"; }
+
+.icon-carb-high {
+  @extend .icon-carb;
+  @extend %image-icon-modifier-arrow-up;
+}
+.icon-carb-low {
+  @extend .icon-carb;
+  @extend %image-icon-modifier-arrow-down;
+}
+.icon-sodium-low {
+  @extend .icon-sodium;
+  @extend %image-icon-modifier-arrow-down;
+}
+.icon-lactose-free {
+  @extend .icon-lactose;
+  @extend %text-icon-modifier;
+  &:after {
+    content: 'Free';
+  }
+}
+.icon-gluten-free {
+  @extend .icon-fibre;
+  @extend %text-icon-modifier;
+  &:after {
+    content: 'Free';
+  }
+}
+
+/* Convenient classes for adding icon-chevron-right, icon-chevron-down etc... */
+@each $direction in up, right, down, left {
+  %insert-icon-chevron-#{$direction} {
+    @include insert-icon(icon-chevron-#{$direction}, before);
+    @extend %position-icon-right;
+  }
+
+  %insert-icon-caret-#{$direction} {
+    @include insert-icon(icon-caret-#{$direction}, before);
+    @extend %position-icon-left;
+  }
+}
+
+/* Icon Rendering / Anti-alias */
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Icon Sizes */
+.icon-extra-large:before {
+  font-size: 2em;
+}
+
+/* Alignment for large icons */
+li {
+  [class^="icon-"],
+  [class*=" icon-"] {
+    &.icon-extra-large {
+      width: 2em;
+      vertical-align: middle;
+    }
+    &.vertical-align {
+      @extend %vertical-align-icon;
+    }
+  }
+}
+
+/* Buttons in list view should be inline-block */
+li {
+  .btn, .nav {
+    [class^="icon-"],
+    [class*=" icon-"] {
+      display: inline-block;
+    }
+  }
+}
+
+/* Icons in buttons should have horizontal margins */
+.btn {
+  [class^="icon-"],
+  [class*=" icon-"] {
+    &:after {
+      content: " ";
+    }
+  }
+}
+
+.btn-mini {
+  [class^="icon-"],
+  [class*=" icon-"] {
+    line-height: 1em;
+  }
+}
+
+/* Icon Colour Override */
+[class^="icon-"],
+[class*=" icon-"] {
+  &.white {
+    color: $white;
+  }
+  &.gray-light {
+    color: $grayLight;
+  }
+  &.blue {
+    color: $blue;
+  }
+}

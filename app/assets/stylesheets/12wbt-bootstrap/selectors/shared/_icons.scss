@@ -1,0 +1,129 @@
+/* Fontawesome Icon */
+// ------------------------------------------------------------------
+%fontawesome-icon {
+  font: {
+    family: FontAwesome;
+    weight: normal;
+    style: normal;
+  }
+  background: {
+    image: none !important;
+    position: 0% 0%;
+    repeat: repeat;
+  }
+  text-decoration: inherit;
+  display: inline-block;
+  speak: none;
+  width: auto;
+  height: auto;
+  line-height: normal;
+  vertical-align: baseline;
+}
+
+/* Icon Position */
+// ------------------------------------------------------------------
+%position-icon-left {
+  padding-left: 28px;
+  position: relative;
+  &:before {
+    position: absolute;
+    display: inline-block;
+    text-align: left;
+    left: 12px;
+    top: 50%;
+    margin-top: -.5 * $baseFontSize;
+    line-height: $baseFontSize;
+    vertical-align: middle;
+  }
+}
+
+%position-icon-right {
+  padding-right: 28px;
+  position: relative;
+  &:before {
+    position: absolute;
+    display: inline-block;
+    text-align: right;
+    right: 12px;
+    top: 50%;
+    margin-top: -.5 * $baseFontSize;
+    line-height: $baseFontSize;
+    vertical-align: middle;
+  }
+}
+
+%vertical-align-icon {
+  height: 1em;
+  line-height: 1em;
+  position: absolute;
+  top: 50%;
+  margin-top: -.5 * 1em;
+}
+
+/* Image Icon - Arrows */
+// ------------------------------------------------------------------
+%image-icon-modifier-arrow {
+  position: relative;
+  &:after {
+    content: ' ';
+    display: block;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    bottom: -6px;
+    right: -4px;
+    z-index: 99;
+    @include retina-background-image('icon-modifiers/circular-purple-arrows', 'png', 56px, 14px);
+  }
+}
+
+%image-icon-modifier-arrow-up {
+  @extend %image-icon-modifier-arrow;
+  &:after {
+    background-position: 0 0;
+  }
+}
+
+%image-icon-modifier-arrow-down {
+  @extend %image-icon-modifier-arrow;
+  &:after {
+    background-position: -14px 0;
+  }
+}
+
+%image-icon-modifier-arrow-left {
+  @extend %image-icon-modifier-arrow;
+  &:after {
+    background-position: -28px 0;
+  }
+}
+
+%image-icon-modifier-arrow-right {
+  @extend %image-icon-modifier-arrow;
+  &:after {
+    background-position: -32px 0;
+  }
+}
+
+/* Text Icon */
+// ------------------------------------------------------------------
+%text-icon-modifier {
+  position: relative;
+  vertical-align: top !important;
+
+  &:before {
+    font-size: .8em;
+    vertical-align: top;
+  }
+
+  &:after {
+    font: normal bold 9px $baseFontFamily;
+    position: absolute;
+    bottom: -12px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: $purple;
+  }
+}

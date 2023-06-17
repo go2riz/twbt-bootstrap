@@ -1,0 +1,43 @@
+/* Rating box */
+// ------------------------------------------------------------------
+.rating-field {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+
+  .icon-star-blank {
+    padding-right: 5px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:before {
+      color: $grayLighter;
+    }
+
+    &.active:before,
+    &:hover:before,
+    &:hover ~ .icon-star-blank:before {
+      background: none;
+      color: $ratingStarColor;
+    }
+  }
+}
+
+/* Rating star */
+// ------------------------------------------------------------------
+.icon-star {
+  color: $ratingStarColor;
+  font-size: $baseFontSize + 5px;
+  line-height: $baseLineHeight + 5px;
+  padding-right: 3px;
+
+  &.icon-star-blank {
+    color: $grayLighter;
+  }
+
+  &.icon-star-large {
+    font-size: $baseFontSize * 1.8;
+    line-height: $baseLineHeight * 1.8;
+  }
+}

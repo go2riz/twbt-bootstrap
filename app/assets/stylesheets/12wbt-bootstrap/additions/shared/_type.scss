@@ -1,0 +1,158 @@
+/* Heading writing font */
+// ---------------------------------------------------------------------------
+.handwriting {
+  font: {
+    family: $hand_of_sean;
+    weight: normal;
+  }
+}
+
+/* Heading font */
+// ---------------------------------------------------------------------------
+.museo {
+  font: {
+    family: $museo;
+    weight: 500;
+  }
+}
+
+/* Page Heading */
+// ---------------------------------------------------------------------------
+.page-header {
+  h1 {
+    margin-bottom: $gridGutterWidth * 2;
+
+    .extra-small {
+      font-size: $smallFontSize;
+      line-height: $smallLineHeight;
+      color: $textColor;
+    }
+
+    .row {
+      display: block;
+    }
+
+    small {
+      i {
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  @include respond-to(phone) {
+    h1 {
+      margin-bottom: $gridGutterWidth;
+
+      small.extra-small {
+        font-size: $smallFontSize;
+        line-height: $smallLineHeight;
+      }
+    }
+  }
+}
+
+.page-header-with-avatar {
+  @include clearfix;
+  .img-polaroid {
+    $width: 70px;
+    $padding: 4px;
+
+    float: left;
+    width: $width;
+    margin-bottom: $gridGutterWidth;
+    padding: $padding;
+    position: relative;
+
+    .badge-avatar {
+      display: block;
+      position: absolute;
+      bottom: $padding;
+      left: $padding;
+      width: $width;
+      padding: {
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+  .text-warning {
+    color: $orange;
+  }
+  h1 {
+    margin-bottom: $gridGutterWidth;
+    margin-left: 80px + $gridGutterWidth;
+  }
+}
+
+/* Section Heading */
+// ---------------------------------------------------------------------------
+.section-title {
+  @extend %section-title;
+
+  &.section-title-first {
+    margin-top: 0.5em;
+  }
+}
+
+.plain-title {
+  margin: 1em 0;
+}
+
+section, .section {
+  @each $heading in h2, h3, h4 {
+    &[ng-view] > div > #{$heading},
+    & > [ng-controller] > #{$heading},
+    & > #{$heading},
+    & > header > #{$heading} {
+      @extend %section-title;
+    }
+  }
+}
+
+/* Truncate title / text */
+// ---------------------------------------------------------------------------
+.truncate {
+  @extend %truncate;
+}
+
+/* Hide text */
+// ---------------------------------------------------------------------------
+.hide-text {
+  @include hide-text;
+}
+
+/* Centre text */
+// ---------------------------------------------------------------------------
+.center-text {
+  text-align: center;
+}
+
+/* Muted text */
+// ---------------------------------------------------------------------------
+.muted {
+  @extend %muted;
+}
+.muted-block {
+  @extend %muted;
+  display: block;
+}
+small.muted-block {
+  font-size: $smallFontSize;
+  line-height: $smallLineHeight;
+  margin-bottom: $baseLineHeight - $smallLineHeight;
+}
+
+.small {
+  @extend %small;
+}
+
+/* Unstyled links */
+// ---------------------------------------------------------------------------
+a.unstyled {
+  text-decoration: none
+}
+
+.privacy-disclaimer {
+  color: $gray;
+  font-size: $smallFontSize;
+}

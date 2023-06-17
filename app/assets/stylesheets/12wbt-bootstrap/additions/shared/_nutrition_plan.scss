@@ -1,0 +1,202 @@
+// Nutrition Plan Day
+.nutrition-plan-day {
+  @extend %well;
+  @include clearfix;
+  margin-bottom: $baseLineHeight;
+  padding: 0;
+  clear: both;
+  width: 100%;
+  overflow: visible;
+  background: $whitesmoke;
+
+  &.today {
+    h3 {
+      background: lighten($yellow, 25%);
+    }
+  }
+
+  // Nutrition Plan Day Heading
+  .nutrition-plan-day-heading {
+    position: relative;
+
+    h3 {
+      line-height : $baseLineHeight;
+      position: relative;
+      padding: $smallWellPadding;
+      margin: 0;
+      color: $blue;
+      font-family: $museo;
+
+      small {
+        font-size: 90%;
+        margin-left: 1%;
+        @include inline-block;
+      }
+
+      .label {
+        position: relative;
+        top: -2px;
+        margin-right: 5px;
+        padding: 3px 5px 2px;
+      }
+    }
+
+    .label-group {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+  }
+
+  // Nutrition Plan Day Recipes
+  .nutrition-plan-day-recipes {
+    width: 100%;
+    margin: 0;
+    display: table;
+    table-layout: fixed;
+    border-collapse: collapse;
+    cursor: pointer;
+  }
+
+  // Nutrition Plan Day Recipe
+  .recipe-card-wrapper {
+    display: table-cell;
+    text-align: center;
+    font-weight: normal;
+    border: solid 1px transparent;
+    background-clip: padding-box;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.recipe-card-no-recipe {
+      img {
+        background-color: $grayLighter;
+      }
+    }
+
+    &.recipe-card-swapped {
+      background: $blueLightDarker;
+
+      header {
+        background: none;
+      }
+
+      p {
+        color: $blue;
+      }
+
+      img {
+        background-color: $blueLightDarker;
+      }
+
+      .recipe-badge-customised {
+        display: inline;
+      }
+
+      .recipe-calories {
+        @extend %recipe-card-label-overlay;
+        right: 4%;
+      }
+    }
+
+    &.recipe-card-swapping {
+      @extend %recipe-card-swappable-state;
+
+      &.recipe-card-swappable {
+        &:hover {
+          .recipe-card-thumb {
+            img {
+              @include opacity(50);
+            }
+
+            &:after {
+              @extend %recipe-card-swappable-badge;
+            }
+          }
+
+          .recipe-badge-customised {
+            @include transition(opacity .5s);
+            @include opacity(0);
+          }
+
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+      &.recipe-card-snack {
+        cursor: default;
+        background: inherit;
+        border: 0;
+        background: $whitesmoke !important;
+
+        &:after {
+          display: none;
+        }
+
+        img {
+          background-color: $grayLighter;
+        }
+      }
+
+      .recipe-badge-customised {
+        @include transition(opacity .5s);
+        @include opacity(100);
+      }
+    }
+
+    .recipe-card-thumb {
+      position: relative;
+      @include transition(opacity .5s);
+      @include opacity(100);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .recipe-badge-customised {
+      position: absolute;
+      display: none;
+      top: 7px;
+      left: 7px;
+      z-index: 1;
+    }
+
+    .recipe-allowance {
+      @extend %recipe-allowance-overlay;
+    }
+
+    .recipe-over-allowance {
+      bottom: 50px;
+      color: $red;
+    }
+
+    .recipe-calories {
+      @extend %recipe-card-label-overlay;
+      right: 4%;
+    }
+
+    .image {
+      position: relative;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    p {
+      margin: $baseLineHeight/2 $baseLineHeight/4;
+      padding: 0 5px;
+      color: $gray;
+    }
+  }
+}
+
+.ie8 {
+  .nutrition-plan-day {
+    .nutrition-plan-day-recipes {
+      border-collapse: separate;
+    }
+  }
+}

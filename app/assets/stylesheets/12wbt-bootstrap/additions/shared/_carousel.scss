@@ -1,0 +1,31 @@
+/* Carousel Caption */
+// --------------------------------------------------------
+.carousel-caption {
+  &.carousel-caption-small {
+    line-height: $baseLineHeight;
+    padding-top: $gridGutterWidth / 2;
+    padding-bottom: $gridGutterWidth / 2;
+  }
+
+  &.carousel-caption-overlay {
+    position: absolute;
+    bottom: 0;
+    background: black;
+    background: transparentize(black, .4);
+  }
+}
+
+/* Thumbnail Carousel */
+// --------------------------------------------------------
+.thumbnail-carousel {
+  .carousel-caption {
+    position: static;
+    bottom: auto;
+    background: none;
+    color: $textColor;
+    padding: {
+      left: $gridGutterWidth / 2;
+      right: $gridGutterWidth / 2;
+    }
+  }
+}

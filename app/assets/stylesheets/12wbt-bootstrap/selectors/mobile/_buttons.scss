@@ -1,0 +1,8 @@
+/* Button - Mobile Adjustment */
+// ------------------------------------------------------------------
+%btn {
+  &:hover, &:active {
+    color: $blue;
+    background-position: 0;
+  }
+}

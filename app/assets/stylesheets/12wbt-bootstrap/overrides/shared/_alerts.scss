@@ -1,0 +1,22 @@
+/* Alert Override */
+// ------------------------------------------------------------------
+.alert {
+  @include border-radius(5px);
+  margin-bottom: $gridGutterWidth;
+
+  p {
+    margin-bottom: $baseLineHeight * .5;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.alert h4 {
+  margin: 0 0 5px 0;
+}
+
+.alert-without-close {
+  padding: 8px 14px;
+}

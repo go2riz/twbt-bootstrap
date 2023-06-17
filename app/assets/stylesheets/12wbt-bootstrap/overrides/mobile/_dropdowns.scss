@@ -1,0 +1,29 @@
+.dropdown-menu {
+  width: 100%;
+}
+
+/* Dropdown Menu - Mobile Adjustment */
+// ------------------------------------------------------------------
+.dropdown-menu li > a:hover,
+.dropdown-submenu:hover > a,
+.dropdown-menu li > button:hover,
+.dropdown-submenu:hover > button {
+  background: transparent;
+}
+
+.dropdown-menu li > a:active,
+.dropdown-menu li > a:focus,
+.dropdown-submenu:active > a,
+.dropdown-menu li > button:active,
+.dropdown-menu li > button:focus,
+.dropdown-submenu:active > button {
+  background: $dropdownLinkBackgroundHover;
+}
+
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover,
+.dropdown-menu .active > button,
+.dropdown-menu .active > button:hover {
+  color: $dropdownLinkColorActive;
+  background: $dropdownLinkBackgroundActive;
+}

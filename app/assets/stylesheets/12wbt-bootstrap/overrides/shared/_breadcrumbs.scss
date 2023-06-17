@@ -1,0 +1,85 @@
+/* Breadcrumb Override */
+// ------------------------------------------------------------------
+.breadcrumb {
+  background-color: $whitesmoke;
+  padding: 0 5px;
+  height: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  border: {
+    bottom: solid 1px $grayLighter;
+    radius: 0;
+  }
+
+  margin: {
+    left: -1 * $gridGutterWidth;
+    right: -1 * $gridGutterWidth;
+    bottom: $gridGutterWidth * 2;
+    top: -1 * $gridGutterWidth;
+  }
+
+  li {
+    font-size: 90%;
+    position: relative;
+    padding: 0 5px;
+    line-height: 30px;
+    height: 30px;
+    vertical-align: top;
+
+    .divider {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0;
+      width: 10px;
+      height: 30px;
+      @include retina-background-image('breadcrumbs/divider', 'png', 10px, 30px);
+      @include hide-text;
+    }
+
+    &.truncate {
+      max-width: 65%;
+
+      @include respond-to(phone) {
+        max-width: 45%;
+      }
+    }
+
+    &.breadcrumb-root {
+      font-size: 110%;
+      a {
+        @include insert-icon(icon-home);
+        span {
+          display: block;
+          text-indent: -9999px;
+        }
+      }
+    }
+  }
+
+  a {
+    font-weight: normal;
+    text-decoration: none;
+    margin-right: 10px;
+
+    &, span {
+      color: $gray;
+    }
+
+    &:hover {
+      &, span {
+        color: $grayLight;
+      }
+    }
+  }
+
+  span {
+    color: $grayLight;
+  }
+
+  @include respond-to(phone) {
+    margin-bottom: $gridGutterWidth;
+  }
+}

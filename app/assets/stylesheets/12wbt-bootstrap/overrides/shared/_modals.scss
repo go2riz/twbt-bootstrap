@@ -1,0 +1,52 @@
+/* Modal Box Override */
+// ------------------------------------------------------------------
+.modal {
+  top: 20px;
+  margin-top: 0;
+
+  &.fade  { top: -100px; }
+  &.fade.in { top: 20px; }
+
+  & > form {
+    margin-bottom: 0;
+  }
+}
+
+.modal-header {
+  text-align: center;
+  padding-right: 30px;
+  padding-left: 30px;
+  @extend %unselectable;
+
+  .close {
+    padding: 10px;
+    margin-right: -25px;
+    margin-top: -10px;
+  }
+
+  h3 {
+    font-weight: normal;
+    font-family: $museo;
+    font-size: $baseFontSize * 1.35;
+    line-height: $baseLineHeight * 1.35;
+  }
+
+  @include respond-to(phone) {
+    h3 {
+      font-size: $baseFontSize * 1;
+      line-height: $baseLineHeight * 1;
+    }
+
+    .close {
+      line-height: 16px;
+    }
+  }
+}
+
+.modal-body {
+  word-wrap: break-word;
+}
+
+.modal-footer {
+  @extend %unselectable;
+}

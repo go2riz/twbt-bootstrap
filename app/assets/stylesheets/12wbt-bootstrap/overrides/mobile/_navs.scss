@@ -1,0 +1,16 @@
+/* Navs Override - Mobile Adjustment */
+// ------------------------------------------------------------------
+.nav > li > a {
+  &:hover {
+    background-color: transparent;
+  }
+  &:active {
+    background-color: $blueLight;
+  }
+  &.btn:hover {
+    background-color: transparent;
+  }
+  &.btn:active {
+    background-color: $btnBackgroundHighlight;
+  }
+}

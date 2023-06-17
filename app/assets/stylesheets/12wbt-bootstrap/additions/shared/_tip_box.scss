@@ -1,0 +1,45 @@
+/* Tip box */
+// --------------------------------------------------
+.tip-box {
+  @extend .popover;
+  display: block;
+  position: relative;
+  top: auto;
+  left: auto;
+  width: auto;
+  box-shadow: none;
+}
+
+.tip-box-content {
+  @extend .popover-content;
+  border-top: 10px solid #fff399;
+}
+
+/* Tip box icon */
+// --------------------------------------------------
+.tip-box-icon-info-sign {
+  @include retina-background-image('icons/tip', 'png', 20px, 20px, 0, 0);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: baseline;
+
+  &:hover {
+    @include opacity(70);
+  }
+}
+
+// Tip box icon - Adjustments
+.dropdown-toggle {
+  & + .tip-box-icon-info-sign {
+    position: relative;
+    margin: 0 5px;
+    top: 4px;
+  }
+}
+
+h1 {
+  .tip-box-icon-info-sign {
+    vertical-align: middle;
+  }
+}

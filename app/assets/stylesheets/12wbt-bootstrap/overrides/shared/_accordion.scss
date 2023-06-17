@@ -1,0 +1,57 @@
+/* Accordion Group Override */
+// ------------------------------------------------------------------
+.accordion-group {
+  overflow: hidden;
+  margin-bottom: 5px;
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.accordion-body {
+  -webkit-backface-visibility: hidden;
+}
+
+/* Accordion Toggle Override */
+// ------------------------------------------------------------------
+.accordion-toggle {
+  background: $whitesmoke;
+  color: $gray;
+  cursor: default;
+}
+
+/* Accordion Heading Override */
+// ------------------------------------------------------------------
+.accordion-heading {
+  .accordion-toggle {
+    cursor: pointer;
+    @extend %insert-icon-caret-down;
+
+    &.accordion-toggle-disabled {
+      padding-left: $wellPadding;
+      background: $whitesmoke;
+
+      &:before {
+        content: '';
+      }
+    }
+
+    &:hover {
+      background: darken($whitesmoke, 5%);
+      color: darken($gray, 5%);
+      text-decoration: none;
+    }
+
+    &.collapsed {
+      @extend %insert-icon-caret-right;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: $baseFontSize;
+    line-height: $baseLineHeight;
+    margin: 0;
+    cursor: pointer;
+  }
+}

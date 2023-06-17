@@ -1,0 +1,81 @@
+/* Fieldset Header */
+// ------------------------------------------------------------------
+%fieldset-sub-header {
+  display: block;
+  background: $whitesmoke;
+  color: $gray;
+  font: {
+    size: $baseFontSize;
+    family: $sansFontFamily;
+    weight: bold;
+  }
+  padding: .5em $smallWellPadding;
+  margin: 0;
+  border-bottom: 1px solid $grayLighter;
+  line-height: $baseLineHeight;
+
+  &:first-child {
+    border-top: 0;
+    @include border-top-radius($baseBorderRadius);
+  }
+
+  &:last-child {
+    border-bottom: 0;
+    @include border-radius(0 0 $baseBorderRadius $baseBorderRadius);
+  }
+
+  & > i {
+    margin-right: 4px;
+  }
+
+  .btn-inline.pull-right {
+    margin: (-1 * .5em) (-1 * $smallWellPadding);
+    padding: .5em $smallWellPadding;
+  }
+}
+
+/* Fieldset Feedback */
+// ------------------------------------------------------------------
+%fieldset-feedback {
+  -webkit-transition: background-color 0.5s linear;
+  -moz-transition: background-color 0.5s linear;
+  -o-transition: background-color 0.5s linear;
+
+  &.normal {
+    background-color: $bodyBackground;
+  }
+  &.success {
+    background-color: $successBackground;
+  }
+  &.editing {
+    background-color: $blueLight;
+  }
+}
+
+/* Fieldset Actions */
+// ------------------------------------------------------------------
+%fieldset-actions {
+  @include clearfix;
+  padding: {
+    top: $smallWellPadding;
+    bottom: $smallWellPadding;
+  }
+  margin-top: $smallWellPadding;
+  border-top: 1px solid $grayLighter;
+}
+
+%fieldset-actions-sticky-bottom {
+  @include box-sizing(border-box);
+  box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: {
+    left: $gridGutterWidth;
+    right: $gridGutterWidth;
+  }
+  background: $whitesmoke;
+  background: transparentize($whitesmoke, .3);
+  z-index: 1000;
+}

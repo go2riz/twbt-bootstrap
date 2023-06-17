@@ -1,0 +1,32 @@
+.popover {
+  color: $textColor;
+  font: {
+    size: $baseFontSize;
+    weight: normal;
+    family: $baseFontFamily;
+  }
+  line-height: $baseLineHeight;
+
+  &.bottom {
+    .arrow:after {
+      border-bottom-color: $popoverTitleBackground;
+    }
+  }
+}
+
+.popover-content {
+  font-size: $smallFontSize;
+  line-height: $smallLineHeight;
+
+  p {
+    font-size: $smallFontSize;
+    line-height: $smallLineHeight;
+    margin-bottom: $baseLineHeight / 4;
+  }
+}
+
+.popover-title {
+  color: $textColor;
+  font-weight: bold;
+  margin: 0 !important;
+}

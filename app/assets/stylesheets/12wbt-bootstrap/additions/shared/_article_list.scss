@@ -1,0 +1,218 @@
+.article-list {
+  $article-list-padding: $smallWellPadding;
+  clear: both;
+  margin-bottom: 15px;
+  border: 1px solid $grayLighter;
+  border-radius: $baseBorderRadius;
+
+  // -----------------------------------------------------------------------------------
+  // Meta data (left column)
+  %article-list-meta {
+    line-height: 1.4em;
+    position: relative;
+    float: left;
+    width: 90px;
+    margin-right: 0;
+
+    .label {
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      text-transform: uppercase;
+    }
+  }
+
+  // Content data (right column)
+  %article-list-content {
+    line-height: 1.4em;
+    float: none;
+    margin-left: 90px + $article-list-padding;
+    width: auto;
+
+    h3, h4, h5 {
+      margin: 0;
+    }
+  }
+
+  // -----------------------------------------------------------------------------------
+  // Article rows
+  %article-list-row {
+    border-bottom: 1px solid $grayLighter;
+    word-wrap: break-word;
+    @include clearfix;
+
+    // Link
+    & > a {
+      display: block;
+      position: relative;
+      padding: $article-list-padding ($article-list-padding * 4) $article-list-padding $article-list-padding;
+      font-weight: normal;
+      text-decoration: none;
+      text-align: left;
+      overflow: hidden;
+
+      &:active {
+        color: $linkColorHover;
+      }
+
+      &.btn-link {
+        font-weight: bold;
+      }
+
+      &.inline {
+        display: inline;
+        padding: 0;
+        font-weight: bold;
+      }
+
+      // Heading
+      h3, h4, h5 {
+        font-size: 1em;
+        line-height: 1.4em;
+        color: $linkColor;
+
+        strong {
+          display: block;
+          color: $linkColor;
+
+          &:active {
+            color: $linkColorHover;
+          }
+        }
+
+        &:active {
+          color: $linkColorHover;
+        }
+      }
+
+      b {
+        color: $textColor;
+      }
+
+      // Sub-heading
+      small {
+        display: block;
+        line-height: $smallLineHeight;
+      }
+
+      // Position icon-chevron-right icon
+      // TODO: should use article-list-icon-chevron-right class instead of manually adding an icon tag
+      .icon-chevron-right {
+        position: absolute;
+        margin-top: -.5 * $baseFontSize;
+        top: 50%;
+        right: 12px;
+        line-height: $baseFontSize;
+      }
+    }
+
+    div.meta {
+      @extend %article-list-meta;
+    }
+
+    div.content {
+      @extend %article-list-content;
+    }
+
+    p {
+      margin-bottom: $baseLineHeight / 2;
+      color: $textColor;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    b {
+      font-weight: bold;
+    }
+
+    // Headings
+    h3, h4, h5 {
+      font-size: $baseFontSize;
+      font-weight: bold;
+    }
+
+    // Apply border radius to first and last article
+    &:first-of-type {
+      @include border-top-radius($baseBorderRadius);
+    }
+
+    &:last-of-type {
+      border-width: 0;
+      @include border-bottom-radius($baseBorderRadius);
+    }
+  }
+
+  article, .article {
+    @extend %article-list-row;
+  }
+
+  // -----------------------------------------------------------------------------------
+  // Article list action
+  & > .article-action {
+    border-top: 1px solid $grayLighter;
+
+    & > a.btn-link {
+      display: block;
+      background: $white;
+      padding: $article-list-padding;
+      @include border-bottom-radius($baseBorderRadius);
+    }
+  }
+
+  // -----------------------------------------------------------------------------------
+  // Sub-headers
+  .sub-header {
+    @extend %fieldset-sub-header;
+  }
+
+  // -----------------------------------------------------------------------------------
+  // Search form inside article-list
+  .article-search {
+    margin: 0;
+    padding: 1em;
+    border-bottom: 1px solid $grayLighter;
+
+    &.no-results {
+      border-bottom-width: 0;
+    }
+
+    .result-info {
+      margin-top: 10px;
+    }
+  }
+
+  // -----------------------------------------------------------------------------------
+  // When there are no article rows
+  .no-articles, .no-results {
+    @extend %muted;
+    margin: 0;
+    padding: 7px 10px;
+  }
+
+  // -----------------------------------------------------------------------------------
+  // Loaders
+  .wait {
+    margin: 0;
+    padding: 7px 10px 7px 33px;
+    background-position: 12px 50%;
+  }
+
+  .loader {
+    margin: 0;
+    padding: 7px 10px;
+  }
+
+  // -----------------------------------------------------------------------------------
+  // Button at the bottom of an article
+  button.btn-link {
+    text-align: left;
+    padding: {
+      left: 10px;
+      right: 10px;
+      top: .5em;
+      bottom: .5em;
+    }
+  }
+}

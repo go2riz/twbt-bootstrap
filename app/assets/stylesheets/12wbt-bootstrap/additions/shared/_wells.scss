@@ -1,0 +1,333 @@
+/* Well Footer */
+// ------------------------------------------------------------------
+.well {
+  .well-footer {
+    background-color: white;
+    border-top: 1px solid $grayLighter;
+    @include border-bottom-radius($baseBorderRadius);
+  }
+}
+
+/* Well Colours */
+// ------------------------------------------------------------------
+.well-white {
+  background-color: $white;
+  border-color: $grayLighter;
+}
+
+.well-blue {
+  background-color: $blueLight;
+  border-color: $blueLightSaturated;
+}
+
+.well-green {
+  background-color: $greenLight;
+  border-color: darken($greenLight, 10%);
+}
+
+.well-gray {
+  background-color: $whitesmoke;
+  border-color: $grayLighter;
+}
+
+.well-cream {
+  background-color: $cream;
+  border-color: darken($cream, 10%);
+}
+
+.well-alert {
+  background-color: $warningBackground;
+  border-color: $warningBorder;
+}
+
+/* Well Bubble */
+// ------------------------------------------------------------------
+.well-bubble {
+  $wellBubblePaddingWidth: 5px;
+  $wellBubbleBorderWidth: 1px;
+  $wellBubbleBorderColor: darken($cream, 10%);
+  $wellBubbleBackgroundColor: $cream;
+  $wellBubbleArrowSize: 8px;
+  $wellBubbleOffsetLeft: $smallWellPadding * 2;
+
+  @extend .well-cream;
+  position: relative;
+  padding: $smallWellPadding;
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    margin-left: $wellBubbleOffsetLeft;
+    top: -$wellBubbleArrowSize*2 + $wellBubbleBorderWidth;
+    border: $wellBubbleArrowSize solid;
+    border-color: transparent $wellBubbleBorderColor $wellBubbleBorderColor transparent;
+  }
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    margin-left: $wellBubbleOffsetLeft + $wellBubbleBorderWidth;
+    top: -$wellBubbleArrowSize*2 + $wellBubbleBorderWidth*3;
+    border: ($wellBubbleArrowSize - $wellBubbleBorderWidth) solid;
+    border-color: transparent $wellBubbleBackgroundColor $wellBubbleBackgroundColor transparent;
+  }
+
+  & > div {
+    @include clearfix();
+  }
+}
+
+// Well Full Width Variants
+// ------------------------------------------------------------------
+.well-full-width {
+  @extend %well-full-width;
+}
+
+.well-full-width-gray {
+  @extend .well-gray;
+  @extend .well-full-width-border;
+}
+
+.well-full-width-blue {
+  @extend .well-blue;
+  @extend .well-full-width-border;
+}
+
+.well-full-width-cream {
+  @extend .well-cream;
+  @extend .well-full-width-border;
+}
+
+.well-full-width-border {
+  border: {
+    width: 1px;
+    style: solid;
+    left-width: 0;
+    right-width: 0;
+  }
+  @include respond-to(tablet) {
+    border-left-width: 1px;
+    border-right-width: 1px;
+  }
+}
+
+// Well for Action Buttons
+// ------------------------------------------------------------------
+.well-action {
+  @extend .btn-link;
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px 0 0;
+  font-weight: bold;
+  border-top: 1px solid $grayLighter;
+}
+
+// Well List
+// ------------------------------------------------------------------
+.well-inner-list {
+  @extend %well-inner-list;
+}
+
+.well-editable-list,
+.well-inner-list.well-editable-list {
+  li {
+    cursor: pointer;
+    @extend %fieldset-feedback;
+
+    &.editing,
+    &.not-editable,
+    &.not-editable-field {
+      cursor: auto;
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.well-icon-chevron-right,
+.well-inner-list.well-icon-chevron-right {
+  li {
+    @extend %insert-icon-chevron-right;
+
+    &:before {
+      color: $linkColor;
+    }
+
+    &.editing,
+    &.not-editable {
+      padding: $smallWellPadding;
+    }
+  }
+}
+
+.well-list {
+  @extend %well;
+  @extend %well-inner-list;
+  padding: 0;
+  background-color: #fafafa;
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    &.highlight {
+      background-color: #fff9cc;
+
+      .meta {
+        i {
+          color: $blue !important;
+        }
+      }
+    }
+
+    &.sub-header {
+      background: $grayLighter;
+      padding: $smallWellPadding/2 $smallWellPadding;
+      font-weight: bold;
+    }
+
+    &:first-child {
+      @include border-radius($baseBorderRadius $baseBorderRadius 0 0);
+    }
+
+    &:last-child {
+      @include border-radius(0 0 $baseBorderRadius $baseBorderRadius);
+    }
+  }
+}
+
+// Well Collapsible
+// ------------------------------------------------------------------
+.well-collapsible-summary {
+  .content {
+    height: auto;
+
+    &.collapsed {
+      overflow: hidden;
+      height: 80px;
+      position: relative;
+
+      &:after {
+        content: ' ';
+        display: block;
+        width: 100%;
+        height: $baseLineHeight * 1.5;
+        position: absolute;
+        bottom: 0;
+        @include background(linear-gradient(transparentize($wellBackground, 1), $wellBackground));
+      }
+    }
+  }
+}
+
+// Well no-results / loading-results
+// ------------------------------------------------------------------
+.well-no-results,
+.well-loading-results {
+  p {
+    @extend %muted;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+// Well sub header
+// ------------------------------------------------------------------
+.well-sub-header {
+  @extend %fieldset-sub-header;
+}
+
+// Well Size
+// ------------------------------------------------------------------
+@each $size in well, well-small {
+  $padding: $wellPadding;
+
+  @if $size == well-small {
+    $padding: $smallWellPadding;
+  }
+  @else if $size == well-large {
+    $padding: $largeWellPadding;
+  }
+
+  .#{$size} {
+    .btn-block-divider, .well-footer {
+      padding: {
+        left: $padding;
+        right: $padding;
+      }
+      margin: $gridGutterWidth (-1 * $padding) (-1 * $padding);
+    }
+
+    .well-footer {
+      padding: $padding;
+    }
+
+    .well-inner-list {
+      margin: {
+        left: -1 * $padding;
+        right: -1 * $padding;
+      }
+    }
+
+    %fieldset-sub-header {
+      margin: {
+        top: -1 * $padding !important;
+        left: -1 * $padding;
+        right: -1 * $padding;
+        bottom: $padding;
+      }
+    }
+  }
+
+  .#{$size}.well-table {
+    .table {
+      margin: {
+        left: -1 * $padding;
+        right: -1 * $padding;
+      }
+      width: auto;
+    }
+  }
+}
+
+@each $colour in well-blue, well-green, well-cream {
+  .#{$colour} {
+    $border-color: $blueLightSaturated;
+    $background-color: $blueLight;
+    @if $colour == well-blue {
+      $border-color: $blueLightSaturated;
+      $background-color: $blueLight;
+    }
+    @else if $colour == well-green {
+      $border-color: darken($greenLight, 10%);
+      $background-color: $greenLight;
+    }
+    @else if $colour == well-cream {
+      $border-color: darken($cream, 10%);
+      $background-color: $cream;
+    }
+    .btn-block-divider, .well-footer {
+      border-color: $border-color;
+    }
+    &.well-collapsible-summary {
+      .content {
+        &.collapsed {
+          &:after {
+            @include background(linear-gradient(transparentize($background-color, 1), $background-color));
+          }
+        }
+      }
+    }
+  }
+}

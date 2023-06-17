@@ -1,0 +1,43 @@
+/* Dropdown Menu Override */
+// ------------------------------------------------------------------
+.dropdown-menu {
+  @include box-sizing(border-box);
+}
+
+.dropdown-menu li > a,
+.dropdown-menu li > button {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.dropdown-menu li > button {
+  background: none;
+  border: 0;
+  color: $textColor;
+  font-weight: normal;
+  padding: 3px 20px;
+  text-align: left;
+  min-width: 100%;
+}
+
+/* Dropdown Menu - Hover State Override */
+// ------------------------------------------------------------------
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-menu li > button:hover,
+.dropdown-menu li > button:focus,
+.dropdown-submenu:hover > button {
+  background: $dropdownLinkBackgroundHover;
+}
+
+/* Dropdown Menu - Active State Override */
+// ------------------------------------------------------------------
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover,
+.dropdown-menu .active > button,
+.dropdown-menu .active > button:hover {
+  color: $dropdownLinkColorActive;
+  background: $dropdownLinkBackgroundActive;
+}

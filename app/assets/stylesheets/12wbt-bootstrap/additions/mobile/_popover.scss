@@ -1,0 +1,20 @@
+.popover-homescreen {
+  @include transition(bottom .3s ease-out);
+  display: block;
+  position: fixed;
+  z-index: 99999;
+  width: 260px;
+  left: 50%;
+  top: auto;
+  bottom: -99999px;
+  margin-left: -130px;
+
+  &.in {
+    bottom: $gridGutterWidth;
+  }
+
+  img.pull-left {
+    max-width: 45px;
+    margin-right: 10px;
+  }
+}
